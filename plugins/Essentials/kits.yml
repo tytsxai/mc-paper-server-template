@@ -1,0 +1,48 @@
+# Essentials 套装配置文件
+#
+# 套装格式:
+# kits:
+#   套装名称:
+#     delay: 延迟时间（秒）
+#     items:
+#       - 物品
+
+kits:
+  # 新手欢迎套装
+  welcome:
+    delay: -1  # -1 表示只能领取一次
+    items:
+      # 基础工具
+      - WOODEN_PICKAXE 1
+      - WOODEN_AXE 1
+      - WOODEN_SHOVEL 1
+      - WOODEN_SWORD 1
+      # 基础食物
+      - BREAD 16
+      - COOKED_BEEF 8
+      # 基础建材
+      - OAK_LOG 32
+      - COBBLESTONE 64
+      - TORCH 32
+      # 欢迎书籍（会在下面配置）
+      - WRITTEN_BOOK 1 name:&6&l新手指南 lore:&7欢迎来到服务器！|&7这本书包含了所有你需要知道的信息|&7|&3QQ群:_539136479
+
+  # 每日签到套装
+  daily:
+    delay: 86400  # 24小时
+    items:
+      - DIAMOND 1
+      - EMERALD 2
+      - GOLDEN_APPLE 1
+      - EXPERIENCE_BOTTLE 5
+      - COOKED_BEEF 16
+
+  # 基础工具套装（每周一次）
+  tools:
+    delay: 604800  # 7天
+    items:
+      - IRON_PICKAXE 1
+      - IRON_AXE 1
+      - IRON_SHOVEL 1
+      - IRON_SWORD 1
+      - SHIELD 1

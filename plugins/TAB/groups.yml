@@ -1,0 +1,37 @@
+# 管理员组配置
+admin:
+  tabprefix: "&c[管理员] &c"
+  tagprefix: "&c[管理员] "
+  customtabname: "%player%"
+  tabsuffix: " &e★"
+  tagsuffix: " &e★"
+
+# VIP 组配置
+vip:
+  tabprefix: "&a[VIP] &a"
+  tagprefix: "&a[VIP] "
+  customtabname: "%player%"
+  tabsuffix: " &6✦"
+  tagsuffix: " &6✦"
+
+# 默认玩家组配置
+default:
+  tabprefix: "&7[玩家] &7"
+  tagprefix: "&7[玩家] "
+  customtabname: "%player%"
+  tabsuffix: ""
+  tagsuffix: ""
+
+# 默认设置（所有未定义的组将使用此配置）
+_DEFAULT_:
+  tabprefix: "%luckperms-prefix%"
+  tagprefix: "%luckperms-prefix%"
+  customtabname: "%player%"
+  tabsuffix: "%luckperms-suffix%"
+  tagsuffix: "%luckperms-suffix%"
+
+per-world:
+  world1:
+    Owner:
+      tabprefix: "&0&l[&a&lOwner&0&l] &a"
+      tagprefix: "&2&lOwner &a"
