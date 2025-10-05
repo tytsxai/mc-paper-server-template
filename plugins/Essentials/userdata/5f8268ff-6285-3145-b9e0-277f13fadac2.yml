@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 47.108.129.185
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1759632232534
+  login: 1759632177893
+money: '0'
+last-account-name: Xiaofan666hh
+lastlocation:
+  world: 8b51011f-0d94-4c1c-a8a0-1165ef5bdf63
+  world-name: world
+  x: 10.5
+  y: 77.0
+  z: 7.5
+  yaw: 0.0
+  pitch: 0.0
+logoutlocation:
+  world: 8b51011f-0d94-4c1c-a8a0-1165ef5bdf63
+  world-name: world
+  x: -2.9899495817200794
+  y: 72.0
+  z: 4.110694467861857
+  yaw: -76.5002212524414
+  pitch: 38.100040435791016
