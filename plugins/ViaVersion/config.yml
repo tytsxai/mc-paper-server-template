@@ -201,7 +201,7 @@ truncate-1_14-books: false
 # Should 1.15+ clients respawn instantly / without showing a death screen?
 use-1_15-instant-respawn: false
 # Show the new death messages for 1.9+ on the death screen
-use-new-deathmessages: true
+use-new-deathmessages: false
 # This will show the new effect indicator in the top-right corner for 1.9+ players.
 use-new-effect-indicator: true
 # Vines that are not connected to blocks will be mapped to air, else 1.13+ would still be able to climb up on them.

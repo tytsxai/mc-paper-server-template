@@ -29,40 +29,40 @@
 
 # You can then reference the item in the "slots" section using their defined name.
 
-title: "<#000000>&l[<#007700>&lChest<#339933>&lSort<#000000>&l] &rSettings"
+title: "<#000000>&l[<#007700>&l箱子<#339933>&l整理<#000000>&l] &r设置"
 size: 45
 items:
   autosorting-enabled:
-    display-name: &autosorting-name "<#2e86c1>&lAutomatic Sorting<#/85c1e9>"
+    display-name: &autosorting-name "<#2e86c1>&l自动整理<#/85c1e9>"
     material: PLAYER_HEAD
     base64: &base64-enabled "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWZmMzE0MzFkNjQ1ODdmZjZlZjk4YzA2NzU4MTA2ODFmOGMxM2JmOTZmNTFkOWNiMDdlZDc4NTJiMmZmZDEifX19"
     lore:
-      - &lore-enabled "<#229954>&lEnabled<#/7dcea0>"
-      - &autosorting-lore-1 "<#d5dbdb>Automatically sorts all chests,"
-      - &autosorting-lore-2 "<#d5dbdb>barrels etc when you use them."
+      - &lore-enabled "<#229954>&l已启用<#/7dcea0>"
+      - &autosorting-lore-1 "<#d5dbdb>自动整理所有箱子、木桶等"
+      - &autosorting-lore-2 "<#d5dbdb>容器，在你使用时自动排序。"
   autosorting-disabled:
     display-name: *autosorting-name
     material: PLAYER_HEAD
     base64: &base64-disabled "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGU0YjhiOGQyMzYyYzg2NGUwNjIzMDE0ODdkOTRkMzI3MmE2YjU3MGFmYmY4MGMyYzViMTQ4Yzk1NDU3OWQ0NiJ9fX0="
     lore:
-      - &lore-disabled "<#a93226>&lDisabled<#/e74c3c>"
+      - &lore-disabled "<#a93226>&l已关闭<#/e74c3c>"
       - *autosorting-lore-1
       - *autosorting-lore-2
   autosorting-nopermission: &nopermission
     display-name: *autosorting-name
     material: BARRIER
     lore:
-      - "<#a93226>No Permission<#/e74c3c>"
+      - "<#a93226>没有权限<#/e74c3c>"
 
 
   autoinvsorting-enabled:
-    display-name: &autoinvsorting-name "<#2e86c1>&lAutomatic Inventory Sorting<#/85c1e9>"
+    display-name: &autoinvsorting-name "<#2e86c1>&l自动整理背包<#/85c1e9>"
     material: PLAYER_HEAD
     base64: *base64-enabled
     lore:
       - *lore-enabled
-      - &autoinvsorting-lore-1 "<#d5dbdb>Automatically sorts your player"
-      - &autoinvsorting-lore-2 "<#d5dbdb>inventory when you open it."
+      - &autoinvsorting-lore-1 "<#d5dbdb>自动整理你的玩家背包"
+      - &autoinvsorting-lore-2 "<#d5dbdb>在你打开时自动排序。"
   autoinvsorting-disabled:
     display-name: *autoinvsorting-name
     material: PLAYER_HEAD
@@ -77,13 +77,13 @@ items:
 
 
   shiftclick-enabled:
-    display-name: &shiftclick-name "<#2e86c1>&lShift-Click<#/85c1e9>"
+    display-name: &shiftclick-name "<#2e86c1>&lShift+左键<#/85c1e9>"
     material: PLAYER_HEAD
     base64: *base64-enabled
     lore:
       - *lore-enabled
-      - &shiftclick-lore-1 "<#d5dbdb>Sorts an inventory using Shift-click"
-      - &shiftclick-lore-2 "<#d5dbdb>on an empty slot."
+      - &shiftclick-lore-1 "<#d5dbdb>使用Shift+左键点击"
+      - &shiftclick-lore-2 "<#d5dbdb>空槽位来整理背包。"
   shiftclick-disabled:
     display-name: *shiftclick-name
     material: PLAYER_HEAD
@@ -98,13 +98,13 @@ items:
 
 
   middleclick-enabled:
-    display-name: &middleclick-name "<#2e86c1>&lMiddle-Click<#/85c1e9>"
+    display-name: &middleclick-name "<#2e86c1>&l鼠标中键<#/85c1e9>"
     material: PLAYER_HEAD
     base64: *base64-enabled
     lore:
       - *lore-enabled
-      - &middleclick-lore-1 "<#d5dbdb>Sorts an inventory using Middle-click"
-      - &middleclick-lore-2 "<#d5dbdb>(mousewheel) on any slot."
+      - &middleclick-lore-1 "<#d5dbdb>使用鼠标中键（滚轮）"
+      - &middleclick-lore-2 "<#d5dbdb>点击任意槽位来整理。"
   middleclick-disabled:
     display-name: *middleclick-name
     material: PLAYER_HEAD
@@ -119,13 +119,13 @@ items:
 
 
   doubleclick-enabled:
-    display-name: &doubleclick-name "<#2e86c1>&lDouble-Click<#/85c1e9>"
+    display-name: &doubleclick-name "<#2e86c1>&l双击左键<#/85c1e9>"
     material: PLAYER_HEAD
     base64: *base64-enabled
     lore:
       - *lore-enabled
-      - &doubleclick-lore-1 "<#d5dbdb>Sorts an inventory using Double-click"
-      - &doubleclick-lore-2 "<#d5dbdb>on an empty slot."
+      - &doubleclick-lore-1 "<#d5dbdb>双击左键点击"
+      - &doubleclick-lore-2 "<#d5dbdb>空槽位来整理背包。"
   doubleclick-disabled:
     display-name: *doubleclick-name
     material: PLAYER_HEAD
@@ -140,13 +140,13 @@ items:
 
 
   shiftrightclick-enabled:
-    display-name: &shiftrightclick-name "<#2e86c1>&lShift-Right-Click<#/85c1e9>"
+    display-name: &shiftrightclick-name "<#2e86c1>&lShift+右键<#/85c1e9>"
     material: PLAYER_HEAD
     base64: *base64-enabled
     lore:
       - *lore-enabled
-      - &shiftrightclick-lore-1 "<#d5dbdb>Sorts an inventory using Shift-Right-click"
-      - &shiftrightclick-lore-2 "<#d5dbdb>on an empty slot."
+      - &shiftrightclick-lore-1 "<#d5dbdb>使用Shift+右键点击"
+      - &shiftrightclick-lore-2 "<#d5dbdb>空槽位来整理背包。"
   shiftrightclick-disabled:
     display-name: *shiftrightclick-name
     material: PLAYER_HEAD
@@ -161,13 +161,13 @@ items:
 
 
   outside-enabled:
-    display-name: &outside-name "<#2e86c1>&lLeft-Click Block<#/85c1e9>"
+    display-name: &outside-name "<#2e86c1>&l左键点击方块<#/85c1e9>"
     material: PLAYER_HEAD
     base64: *base64-enabled
     lore:
       - *lore-enabled
-      - &outside-lore-1 "<#d5dbdb>Sorts a chest, barrel etc. by"
-      - &outside-lore-2 "<#d5dbdb>left-clicking it."
+      - &outside-lore-1 "<#d5dbdb>通过左键点击箱子、"
+      - &outside-lore-2 "<#d5dbdb>木桶等方块来整理。"
   outside-disabled:
     display-name: *outside-name
     material: PLAYER_HEAD
@@ -182,16 +182,16 @@ items:
 
 
   leftclick-enabled:
-    display-name: &leftclick-name "<#2e86c1>&lFill Chest<#/85c1e9>"
+    display-name: &leftclick-name "<#2e86c1>&l填充箱子<#/85c1e9>"
     material: PLAYER_HEAD
     base64: *base64-enabled
     lore:
       - *lore-enabled
-      - &leftclick-lore-1 "<#d5dbdb>Fill a chest with matching items by"
-      - &leftclick-lore-2 "<#d5dbdb>left-clicking outside the opened inventory."
-      - &leftclick-lore-3 "<#d5dbdb>Fill a chest with all items (except your"
-      - &leftclick-lore-4 "<#d5dbdb>hotbar) by double-left-clicking outside"
-      - &leftclick-lore-5 "<#d5dbdb>the opened inventory."
+      - &leftclick-lore-1 "<#d5dbdb>在打开的背包界面外左键"
+      - &leftclick-lore-2 "<#d5dbdb>点击，将匹配的物品填入箱子。"
+      - &leftclick-lore-3 "<#d5dbdb>在打开的背包界面外双击左键"
+      - &leftclick-lore-4 "<#d5dbdb>将所有物品（除快捷栏外）"
+      - &leftclick-lore-5 "<#d5dbdb>填入箱子。"
   leftclick-disabled:
     display-name: *leftclick-name
     material: PLAYER_HEAD
@@ -209,16 +209,16 @@ items:
 
 
   rightclick-enabled:
-    display-name: &rightclick-name "<#2e86c1>Empty Chest<#/85c1e9>"
+    display-name: &rightclick-name "<#2e86c1>清空箱子<#/85c1e9>"
     material: PLAYER_HEAD
     base64: *base64-enabled
     lore:
       - *lore-enabled
-      - &rightclick-lore-1 "<#d5dbdb>Take matching items from a chest by"
-      - &rightclick-lore-2 "<#d5dbdb>right-clicking outside the opened"
-      - &rightclick-lore-3 "<#d5dbdb>inventory. Take all items from a chest"
-      - &rightclick-lore-4 "<#d5dbdb>by double-left-clicking outside the"
-      - &rightclick-lore-5 "<#d5dbdb>opened inventory"
+      - &rightclick-lore-1 "<#d5dbdb>在打开的背包界面外右键"
+      - &rightclick-lore-2 "<#d5dbdb>点击，从箱子中取出匹配的"
+      - &rightclick-lore-3 "<#d5dbdb>物品。在打开的背包界面外"
+      - &rightclick-lore-4 "<#d5dbdb>双击右键，从箱子中取出"
+      - &rightclick-lore-5 "<#d5dbdb>所有物品。"
   rightclick-disabled:
     display-name: *rightclick-name
     material: PLAYER_HEAD

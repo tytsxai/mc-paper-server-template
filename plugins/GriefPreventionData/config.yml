@@ -2,14 +2,14 @@
 
 GriefPrevention:
   SeaLevelOverrides:
-    world: -1
-    world_nether: -1
-    world_the_end: -1
+    QQ群539136479: -1
+    QQ群539136479_nether: -1
+    QQ群539136479_the_end: -1
   Claims:
     Mode:
-      world_the_end: Disabled
-      world_nether: Disabled
-      world: Survival
+      QQ群539136479: Survival
+      QQ群539136479_nether: Disabled
+      QQ群539136479_the_end: Disabled
     PreventGlobalMonsterEggs: true
     PreventTheft: true
     ProtectCreatures: true
@@ -72,9 +72,9 @@ GriefPrevention:
     Logout Message Delay In Seconds: 0
   PvP:
     RulesEnabledInWorld:
-      world: true
-      world_nether: true
-      world_the_end: true
+      QQ群539136479: false
+      QQ群539136479_nether: false
+      QQ群539136479_the_end: false
     ProtectFreshSpawns: true
     PunishLogout: true
     CombatTimeoutSeconds: 15

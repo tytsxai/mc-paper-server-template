@@ -141,7 +141,7 @@ settings:
         - /totp
         # Max number of allowed registrations per IP
         # The value 0 means an unlimited number of registrations!
-        maxRegPerIp: 0
+        maxRegPerIp: 3
         # Minimum allowed username length
         minNicknameLength: 3
         # Maximum allowed username length
@@ -202,13 +202,13 @@ settings:
         DenyTabCompleteBeforeLogin: false
         # Should we display all other accounts from a player when he joins?
         # permission: /authme.admin.accounts
-        displayOtherAccounts: true
+        displayOtherAccounts: false
         # Spawn priority; values: authme, essentials, cmi, multiverse, default
         spawnPriority: authme,essentials,cmi,multiverse,default
         # Maximum Login authorized by IP
-        maxLoginPerIp: 0
+        maxLoginPerIp: 3
         # Maximum Join authorized by IP
-        maxJoinPerIp: 0
+        maxJoinPerIp: 3
         # AuthMe will NEVER teleport players if set to true!
         noTeleport: false
         # Regex syntax for allowed chars in passwords. The default [!-~] allows all visible ASCII

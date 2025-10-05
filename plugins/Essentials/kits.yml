@@ -1,42 +1,58 @@
-# Essentials 套装配置文件
+# EssentialsX kit configuration.
+# If no kits are defined in this file, the plugin will attempt to copy them from 'config.yml'.
+
+# All items MUST be followed by a quantity.
+# Kit names should be in lowercase and will be treated as such in permissions and costs.
+# Syntax: - item[:durability] amount [enchantment:level]... [itemmeta:value]...
+# For detailed information on item meta, visit https://wiki.ess3.net/wiki/Item_Meta
 #
-# 套装格式:
-# kits:
-#   套装名称:
-#     delay: 延迟时间（秒）
-#     items:
-#       - 物品
+# To make a kit execute a command, add '/<command>' to the item list. Use {USERNAME} to reference the player receiving the kit.
+# Use {PLAYER} to display the player's display name instead of the username.
+# 'delay' refers to the cooldown between how often you can use each kit, measured in seconds. Set to -1 for a one-time kit.
+#
+# You can also organize kits into separate files within the 'kits' subdirectory.
+# Essentials will treat all '.yml' files in the subdirectory as valid kit files and add them along with those in here.
+# Each file in the 'kits' subdirectory must be formatted the same as this file.
+#
+# For more information, refer to https://wiki.ess3.net/wiki/Kits
 
 kits:
-  # 新手欢迎套装 - 最基础的生存物资
   welcome:
-    delay: -1  # -1 表示只能领取一次
+    delay: -1
     items:
-      # 最基础的工具（只给必需的）
-      - WOODEN_PICKAXE 1
-      - WOODEN_AXE 1
-      # 少量食物（避免一开始饿死）
-      - BREAD 4
-      # 最少建材（鼓励玩家自己采集）
-      - OAK_LOG 8
-      - TORCH 8
-      # 欢迎书籍
-      - WRITTEN_BOOK 1 name:&6&l新手指南 lore:&7欢迎来到服务器！|&7这本书包含了所有你需要知道的信息|&7|&3QQ群:_539136479
-
-  # 每日签到套装 - 基础补给（无贵重物品）
-  daily:
-    delay: 86400  # 24小时
-    items:
-      # 只给基础食物和材料，不给钻石、金苹果等贵重物品
-      - BREAD 8
-      - COAL 16
-      - ARROW 8
-
-  # 基础工具套装（每周一次）- 降低到石制工具
+      - bread 16
+      - cooked_beef 8
+      - wooden_sword 1
+      - wooden_pickaxe 1
+      - wooden_axe 1
+      - wooden_shovel 1
+      - torch 32
   tools:
-    delay: 604800  # 7天
+    delay: 10
     items:
-      # 改为石制工具，不给铁制工具
-      - STONE_PICKAXE 1
-      - STONE_AXE 1
-      - STONE_SHOVEL 1
+      - stonesword 1
+      - stoneshovel 1
+      - stonepickaxe 1
+      - stoneaxe 1
+  dtools:
+    delay: 600
+    items:
+      - dpickaxe 1 efficiency:1 durability:1 fortune:1 name:&4Gigadrill lore:The_drill_that_&npierces|the_heavens
+      - dshovel 1 digspeed:3 name:Dwarf lore:Diggy|Diggy|Hole
+      - lhelm 1 color:255,255,255 name:Top_Hat lore:Good_day,_Good_day
+      - daxe:780 1
+      - /broadcast {USERNAME} just got some fancy tools!
+  notch:
+    delay: 6000
+    items:
+      - playerhead 1 player:Notch
+  color:
+    delay: 6000
+    items:
+      - writtenbook 1 title:&4Book_&9o_&6Colors author:KHobbits lore:Ingame_color_codes book:Colors
+  firework:
+    delay: 6000
+    items:
+      - fireworkrocket 1 name:Angry_Creeper color:red fade:green type:creeper power:1
+      - fireworkrocket 1 name:Starry_Night color:yellow,orange fade:blue type:star effect:trail,twinkle power:1
+      - fireworkrocket 2 name:Solar_Wind color:yellow,orange fade:red shape:large effect:twinkle color:yellow,orange fade:red shape:ball effect:trail color:red,purple fade:pink shape:star effect:trail power:1

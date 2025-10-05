@@ -14,7 +14,7 @@ config-version: 20
 # -- 'language' Clearlag supports multiple languages (https://github.com/bob7l/Clearlag-Languages) translated by the community
 # -- 'use-internal-tps' Should Clearlag use Spigot's /tps? (Updated by minutes, much slower, but more accurate!)
 settings:
-  language: Chinese
+  language: 'ChineseSimplified'
   auto-update: false
   enable-api: true
   use-internal-tps: true
@@ -295,8 +295,8 @@ spawn-limiter:
 # -- 'broadcast-enabled' defines whether or not tps-meter should broadcast
 tps-meter:
   enabled: false
-  trigger-broadcast-message: '&6[ClearLag] &cThe server is overloaded, executing lag-perventing measures'
-  recover-broadcast-message: '&6[ClearLag] &aThe server is no longer overloaded!'
+  trigger-broadcast-message: '&6[清理] &c服务器过载，正在执行防卡措施'
+  recover-broadcast-message: '&6[清理] &a服务器已恢复正常！'
   broadcast-enabled: false
   interval: 15
   tps-trigger: 14.0
@@ -357,7 +357,7 @@ auto-removal:
   enabled: true
   broadcast-message: '&6[清理] &a已清理 +RemoveAmount 个实体！'
   broadcast-removal: true
-  autoremoval-interval: 300
+  autoremoval-interval: 1800
   world-filter:
   # - this_world <-This world will be ignored during removal!
   boat: false
@@ -386,8 +386,8 @@ auto-removal:
   # - Minecart !isMounted <- This entity will be REMOVED if it's NOT mounted
   # - Wolf !hasName <- This entity will be REMOVED if it doesn't have a name
   warnings:
-        - 'time:400 msg:&4[ClearLag] &cWarning Ground items will be removed in &7+remaining &cseconds!'
-        - 'time:440 msg:&4[ClearLag] &cWarning Ground items will be removed in &7+remaining &cseconds!'
+        - 'time:1500 msg:&4[清理] &c警告：地面物品将在 &7+remaining &c秒后被清理！'
+        - 'time:1740 msg:&4[清理] &c警告：地面物品将在 &7+remaining &c秒后被清理！'
 
 #What should be removed during /lagg clear, nearly the same thing as auto-removal
 command-remove:
@@ -419,7 +419,7 @@ limit:
   enabled: false
   max: 1000
   check-interval: 60
-  broadcast-message: '&6[ClearLag] &aLimit reached, removed +RemoveAmount Entities!'
+  broadcast-message: '&6[清理] &a达到限制，已清理 +RemoveAmount 个实体！'
   world-filter:
   # - this_world <-This world will be ignored during removal!
   broadcast-removal: true
@@ -462,9 +462,9 @@ custom-trigger-removal:
         entity-clearer:
           execute-job-time: 120
           warnings:
-            - 'time:60 msg:&4[ClearLag] &cEntities/drops will be purged in &7+remaining &cseconds!'
-            - 'time:100 msg:&4[ClearLag] &cEntities/drops will be purged in &720 &cseconds!'
-            - 'time:110 msg:&4[ClearLag] &cEntities/drops will be purged in &710 &cseconds!'
+            - 'time:60 msg:&4[清理] &c实体/掉落物将在 &7+remaining &c秒后被清理！'
+            - 'time:100 msg:&4[清理] &c实体/掉落物将在 &720 &c秒后被清理！'
+            - 'time:110 msg:&4[清理] &c实体/掉落物将在 &710 &c秒后被清理！'
           world-filter:
           # - world <-This world will be ignored during removal
           removeEntities:

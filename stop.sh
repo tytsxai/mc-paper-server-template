@@ -1,17 +1,33 @@
 #!/bin/bash
-# Minecraft Paper Server 停止脚本
 
-echo "正在停止 Minecraft 服务器..."
-pkill -f "paper-1.21.8-60.jar"
+# 查找并停止Minecraft服务器进程
+PID=$(ps aux | grep "paper.*jar" | grep -v grep | awk '{print $2}')
 
-# 等待进程完全停止
-sleep 3
-
-# 检查是否成功停止
-if pgrep -f "paper-1.21.8-60.jar" > /dev/null; then
-    echo "警告: 服务器进程仍在运行"
-    echo "尝试强制停止..."
-    pkill -9 -f "paper-1.21.8-60.jar"
+if [ -z "$PID" ]; then
+    echo "Minecraft服务器未运行"
 else
-    echo "服务器已成功停止"
+    echo "正在停止Minecraft服务器 (PID: $PID)..."
+    kill $PID
+
+    # 等待最多 70 秒（60秒超时 + 10秒缓冲）
+    echo "等待服务器正常关闭（最多70秒）..."
+    for i in {1..70}; do
+        if ! ps -p $PID > /dev/null 2>&1; then
+            echo "服务器已正常停止"
+            exit 0
+        fi
+        sleep 1
+        echo -n "."
+    done
+
+    echo ""
+    echo "服务器未在70秒内停止，强制终止..."
+    kill -9 $PID
+    sleep 2
+
+    if ! ps -p $PID > /dev/null 2>&1; then
+        echo "服务器已强制停止"
+    else
+        echo "警告：无法停止服务器进程"
+    fi
 fi

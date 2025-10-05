@@ -1,3 +1,3 @@
-Welcome {PLAYER} on {SERVER} server
+欢迎 {PLAYER} 来到 我的世界纯净生存服
 
-This server uses AuthMeReloaded protection!
+本服务器已启用 AuthMeReloaded 身份验证保护！
