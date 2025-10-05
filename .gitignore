@@ -10,57 +10,31 @@ logs/
 server.log
 
 # ============================================
-# 世界数据（太大，不适合上传）
+# 世界数据备份（旧世界备份不上传）
 # ============================================
-world/
-world_nether/
-world_the_end/
-*/world/
-*/world_nether/
-*/world_the_end/
+old-worlds/
+# 注意：新世界数据会上传到 GitHub
 
 # ============================================
 # 缓存和临时文件
 # ============================================
 cache/
-.cache/
 *.tmp
 *.temp
-usercache.json
+.console_history
+
+# ============================================
+# 版本文件（会自动生成）
+# ============================================
 version_history.json
-
-# ============================================
-# 玩家数据（包含隐私信息）
-# ============================================
-banned-ips.json
-banned-players.json
-ops.json
-whitelist.json
-
-# ============================================
-# 插件数据（可能包含敏感信息）
-# ============================================
-plugins/*/playerdata/
-plugins/*/players/
-plugins/*/userdata/
-plugins/AuthMe/authme.db
-plugins/AuthMe/backups/
-plugins/CoreProtect/database.db
-plugins/Essentials/userdata/
-plugins/GriefPrevention/ClaimData/
-plugins/GriefPrevention/PlayerData/
-
-# ============================================
-# 崩溃报告
-# ============================================
-crash-reports/
+paper-*.jar.old
 
 # ============================================
 # 备份文件
 # ============================================
-backups/
+backup-*.tar.gz
 *.backup
-*.bak
+backups/
 
 # ============================================
 # 系统文件
@@ -68,26 +42,22 @@ backups/
 .DS_Store
 Thumbs.db
 *.swp
-*.swo
 *~
 
 # ============================================
-# IDE 文件
+# 插件生成的大型数据库（可选）
 # ============================================
-.idea/
-.vscode/
-*.iml
+# 如果数据库文件太大，可以取消下面的注释
+# plugins/LuckPerms/*.db
+# plugins/PlayerParticles/*.db
 
 # ============================================
-# 保留的文件（注释掉表示要上传）
+# 崩溃报告（可选保留）
 # ============================================
-# 以下文件会被上传：
-# - server.properties（服务器配置）
-# - bukkit.yml, spigot.yml, paper.yml（服务器配置）
-# - plugins/*/config.yml（插件配置）
-# - plugins/Essentials/motd.txt（欢迎消息）
-# - plugins/Essentials/rules.txt（服务器规则）
-# - plugins/Essentials/kits.yml（礼包配置）
-# - *.sh（启动脚本）
-# - *.md（说明文档）
-# - README.md（项目说明）
+crash-reports/
+
+# ============================================
+# 性能分析文件
+# ============================================
+spark-*.html
+timings-*.txt

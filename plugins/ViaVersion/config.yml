@@ -17,7 +17,7 @@ armor-toggle-fix: true
 # If the above is true, should we automatically team players until you do?
 auto-team: true
 # Change the blocked disconnect message
-block-disconnect-msg: You are using an unsupported Minecraft version!
+block-disconnect-msg: §c您使用的 Minecraft 版本不受支持！§e请使用 1.13-1.21.9 版本
 # Block specific Minecraft protocol version numbers.
 # List of all Minecraft protocol versions: https://minecraft.wiki/w/Protocol_version, or use a generator: https://via.krusic22.com
 block-protocols: []
@@ -173,7 +173,7 @@ replacement-piston-id: 0
 # The message to be displayed at the prompt when the 1.17+ client receives the server resource pack.
 resource-pack-1_17-prompt: ''
 # Send the supported versions with the Status (Ping) response packet
-send-supported-versions: false
+send-supported-versions: true
 #
 # Enable serverside block-connections for 1.13+ clients - all the options in this section are built around this option
 serverside-blockconnections: true

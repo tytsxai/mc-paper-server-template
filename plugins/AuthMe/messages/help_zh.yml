@@ -1,0 +1,83 @@
+# AuthMe 帮助的翻译配置，例如当调用 /authme help 或 /authme help register 时
+
+# -------------------------------------------------------
+# 帮助部分使用的文本列表
+common:
+    header: '==========[ AuthMeReloaded 帮助 ]=========='
+    optional: '可选'
+    hasPermission: '你有权限'
+    noPermission: '无权限'
+    default: '默认'
+    result: '结果'
+    defaultPermissions:
+        notAllowed: '无权限'
+        opOnly: '仅OP'
+        allowed: '所有人允许'
+
+# -------------------------------------------------------
+# 各个帮助部分的标题
+# 将翻译文本设置为空文本以禁用该部分，例如隐藏替代项:
+#   alternatives: ''
+section:
+    command: '命令'
+    description: '简短描述'
+    detailedDescription: '详细描述'
+    arguments: '参数'
+    permissions: '权限'
+    alternatives: '替代命令'
+    children: '子命令'
+
+# -------------------------------------------------------
+# 你可以使用以下模式翻译所有命令的数据
+# 例如要翻译 /authme reload，创建一个 "authme.reload" 部分，或为 /login 创建 "login"
+# 如果命令有参数，你可以使用下面的 arg1 来翻译第一个参数，依此类推
+# 翻译不需要完整；任何缺失的部分将默默地从默认值中获取
+# 重要：将主命令如 "authme" 放在其子命令之前（例如 "authme.reload"）
+commands:
+    authme.register:
+        description: '注册玩家'
+        detailedDescription: '使用指定的密码注册指定的玩家。'
+        arg1:
+            label: '玩家'
+            description: '玩家名称'
+        arg2:
+            label: '密码'
+            description: '密码'
+
+    login:
+        description: '登录账号'
+        detailedDescription: '使用你的密码登录服务器。'
+        arg1:
+            label: '密码'
+            description: '你的账号密码'
+
+    register:
+        description: '注册账号'
+        detailedDescription: '在服务器上注册一个新账号。'
+        arg1:
+            label: '密码'
+            description: '你想要设置的密码'
+        arg2:
+            label: '确认密码'
+            description: '再次输入密码以确认'
+
+    changepassword:
+        description: '修改密码'
+        detailedDescription: '修改你的账号密码。'
+        arg1:
+            label: '旧密码'
+            description: '你当前的密码'
+        arg2:
+            label: '新密码'
+            description: '你想要设置的新密码'
+
+    logout:
+        description: '登出'
+        detailedDescription: '从你的账号登出。'
+
+    unregister:
+        description: '注销账号'
+        detailedDescription: '从服务器注销你的账号。'
+        arg1:
+            label: '密码'
+            description: '你的账号密码'

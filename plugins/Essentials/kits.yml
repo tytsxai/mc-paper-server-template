@@ -8,41 +8,35 @@
 #       - 物品
 
 kits:
-  # 新手欢迎套装
+  # 新手欢迎套装 - 最基础的生存物资
   welcome:
     delay: -1  # -1 表示只能领取一次
     items:
-      # 基础工具
+      # 最基础的工具（只给必需的）
       - WOODEN_PICKAXE 1
       - WOODEN_AXE 1
-      - WOODEN_SHOVEL 1
-      - WOODEN_SWORD 1
-      # 基础食物
-      - BREAD 16
-      - COOKED_BEEF 8
-      # 基础建材
-      - OAK_LOG 32
-      - COBBLESTONE 64
-      - TORCH 32
-      # 欢迎书籍（会在下面配置）
+      # 少量食物（避免一开始饿死）
+      - BREAD 4
+      # 最少建材（鼓励玩家自己采集）
+      - OAK_LOG 8
+      - TORCH 8
+      # 欢迎书籍
       - WRITTEN_BOOK 1 name:&6&l新手指南 lore:&7欢迎来到服务器！|&7这本书包含了所有你需要知道的信息|&7|&3QQ群:_539136479
 
-  # 每日签到套装
+  # 每日签到套装 - 基础补给（无贵重物品）
   daily:
     delay: 86400  # 24小时
     items:
-      - DIAMOND 1
-      - EMERALD 2
-      - GOLDEN_APPLE 1
-      - EXPERIENCE_BOTTLE 5
-      - COOKED_BEEF 16
+      # 只给基础食物和材料，不给钻石、金苹果等贵重物品
+      - BREAD 8
+      - COAL 16
+      - ARROW 8
 
-  # 基础工具套装（每周一次）
+  # 基础工具套装（每周一次）- 降低到石制工具
   tools:
     delay: 604800  # 7天
     items:
-      - IRON_PICKAXE 1
-      - IRON_AXE 1
-      - IRON_SHOVEL 1
-      - IRON_SWORD 1
-      - SHIELD 1
+      # 改为石制工具，不给铁制工具
+      - STONE_PICKAXE 1
+      - STONE_AXE 1
+      - STONE_SHOVEL 1
