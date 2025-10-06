@@ -6,18 +6,18 @@ admin:
   tabsuffix: " &e★"
   tagsuffix: " &e★"
 
-# VIP 组配置
-vip:
-  tabprefix: "&a[VIP] &a"
-  tagprefix: "&a[VIP] "
-  customtabname: "%player%"
-  tabsuffix: " &6✦"
-  tagsuffix: " &6✦"
-
-# 默认玩家组配置
-default:
+# 正常玩家组配置
+member:
   tabprefix: "&7[玩家] &7"
   tagprefix: "&7[玩家] "
+  customtabname: "%player%"
+  tabsuffix: ""
+  tagsuffix: ""
+
+# 游客组配置
+guest:
+  tabprefix: "&8[游客] &8"
+  tagprefix: "&8[游客] "
   customtabname: "%player%"
   tabsuffix: ""
   tagsuffix: ""

@@ -193,442 +193,391 @@ Messages:
   InvalidPermissionID:
     Text: 请使用 trust、build、container 或 access。
   OnlySellBlocks:
-    Text: Claim blocks may only be sold, not purchased.
+    Text: 领地方块只能出售，不能购买。
   BlockPurchaseCost:
-    Text: Each claim block costs {0}.  Your balance is {1}.
+    Text: 每个领地方块需要 {0}。你的余额是 {1}。
     Notes: '0: cost of one block; 1: player''s account balance'
   ClaimBlockLimit:
-    Text: You've reached your claim block limit.  You can't purchase more.
+    Text: 你已达到领地方块上限。无法购买更多。
   InsufficientFunds:
-    Text: You don't have enough money.  You need {0}, but you only have {1}.
+    Text: 你的钱不够。你需要 {0}，但只有 {1}。
     Notes: '0: total cost; 1: player''s account balance'
   MaxBonusReached:
-    Text: Can't purchase {0} more claim blocks. The server has a limit of {1} bonus
-      claim blocks.
+    Text: 无法购买 {0} 个领地方块。服务器的奖励领地方块上限为 {1}。
     Notes: '0: block count; 1: bonus claims limit'
   PurchaseConfirmation:
-    Text: Withdrew {0} from your account.  You now have {1} available claim blocks.
+    Text: 已从你的账户中扣除 {0}。你现在有 {1} 个可用的领地方块。
     Notes: '0: total cost; 1: remaining blocks'
   OnlyPurchaseBlocks:
-    Text: Claim blocks may only be purchased, not sold.
+    Text: 领地方块只能购买，不能出售。
   BlockSaleValue:
-    Text: Each claim block is worth {0}.  You have {1} available for sale.
+    Text: 每个领地方块价值 {0}。你有 {1} 个可供出售。
     Notes: '0: block value; 1: available blocks'
   NotEnoughBlocksForSale:
-    Text: You don't have that many claim blocks available for sale.
+    Text: 你没有那么多领地方块可供出售。
   BlockSaleConfirmation:
-    Text: Deposited {0} in your account.  You now have {1} available claim blocks.
+    Text: 已将 {0} 存入你的账户。你现在有 {1} 个可用的领地方块。
     Notes: '0: amount deposited; 1: remaining blocks'
   AdminClaimsMode:
-    Text: Administrative claims mode active.  Any claims created will be free and
-      editable by other administrators.
+    Text: 管理领地模式已激活。创建的领地将是免费的，其他管理员也可以编辑。
   BasicClaimsMode:
-    Text: Returned to basic claim creation mode.
+    Text: 已返回到基础领地创建模式。
   SubdivisionMode:
-    Text: Subdivision mode.  Use your shovel to create subdivisions in your existing
-      claims.  Use /basicclaims to exit.
+    Text: 子领地模式。使用你的铲子在现有领地中创建子领地。使用 /basicclaims 退出。
   SubdivisionVideo2:
-    Text: 'Click for Subdivision Help: {0}'
+    Text: 点击查看子领地帮助：{0}
     Notes: 0:video URL
   DeleteClaimMissing:
-    Text: There's no claim here.
+    Text: 这里没有领地。
   DeletionSubdivisionWarning:
-    Text: This claim includes subdivisions.  If you're sure you want to delete it,
-      use /deleteclaim again.
+    Text: 此领地包含子领地。如果你确定要删除它，请再次使用 /deleteclaim。
   DeleteSuccess:
-    Text: Claim deleted.
+    Text: 领地已删除。
   CantDeleteAdminClaim:
-    Text: You don't have permission to delete administrative claims.
+    Text: 你没有权限删除管理领地。
   DeleteAllSuccess:
-    Text: Deleted all of {0}'s claims.
+    Text: 已删除 {0} 的所有领地。
     Notes: '0: owner''s name'
   NoDeletePermission:
-    Text: You don't have permission to delete claims.
+    Text: 你没有权限删除领地。
   AllAdminDeleted:
-    Text: Deleted all administrative claims.
+    Text: 已删除所有管理领地。
   AdjustBlocksSuccess:
-    Text: 'Adjusted {0}''s bonus claim blocks by {1}.  New total bonus blocks: {2}.'
+    Text: 已调整 {0} 的奖励领地方块 {1} 个。新的总奖励方块数：{2}。
     Notes: '0: player; 1: adjustment; 2: new total'
   NotTrappedHere:
-    Text: You can build here.  Save yourself.
+    Text: 你可以在这里建造。自救吧。
   RescuePending:
-    Text: If you stay put for 10 seconds, you'll be teleported out.  Please wait.
+    Text: 如果你停留 10 秒，将被传送出去。请等待。
   NonSiegeWorld:
-    Text: Siege is disabled here.
+    Text: 此处已禁用围攻。
   AlreadySieging:
-    Text: You're already involved in a siege.
+    Text: 你已经参与了一场围攻。
   NotSiegableThere:
-    Text: '{0} isn''t protected there.'
+    Text: '{0} 在那里没有保护。'
     Notes: '0: defending player'
   SiegeTooFarAway:
-    Text: You're too far away to siege.
+    Text: 你离得太远，无法围攻。
   NoSiegeYourself:
-    Text: You cannot siege yourself, don't be silly
+    Text: 你不能围攻自己，别傻了。
   NoSiegeDefenseless:
-    Text: That player is defenseless.  Go pick on somebody else.
+    Text: 那个玩家毫无防御。去找别人吧。
   AlreadyUnderSiegePlayer:
-    Text: '{0} is already under siege.  Join the party!'
+    Text: '{0} 已被围攻。加入战斗吧！'
     Notes: '0: defending player'
   AlreadyUnderSiegeArea:
-    Text: That area is already under siege.  Join the party!
+    Text: 该区域已被围攻。加入战斗吧！
   NoSiegeAdminClaim:
-    Text: Siege is disabled in this area.
+    Text: 此区域已禁用围攻。
   SiegeOnCooldown:
-    Text: You're still on siege cooldown for this defender or claim.  Find another
-      victim.
+    Text: 你对此防御者或领地的围攻冷却尚未结束。找其他目标吧。
   SiegeAlert:
-    Text: You're under siege!  If you log out now, you will die.  You must defeat
-      {0}, wait for him to give up, or escape.
+    Text: 你正被围攻！如果现在退出游戏，你将死亡。你必须击败 {0}，等他放弃，或者逃跑。
     Notes: '0: attacker name'
   SiegeConfirmed:
-    Text: The siege has begun!  If you log out now, you will die.  You must defeat
-      {0}, chase him away, or admit defeat and walk away.
+    Text: 围攻已开始！如果现在退出游戏，你将死亡。你必须击败 {0}，赶走他，或者承认失败并离开。
     Notes: '0: defender name'
   DeleteTopLevelClaim:
-    Text: To delete a subdivision, stand inside it.  Otherwise, use /abandontoplevelclaim
-      to delete this claim and all subdivisions.
+    Text: 要删除子领地，请站在其中。否则，使用 /abandontoplevelclaim 删除此领地及所有子领地。
   AbandonSuccess:
-    Text: Claim abandoned.  You now have {0} available claim blocks.
+    Text: 领地已放弃。你现在有 {0} 个可用的领地方块。
     Notes: '0: remaining claim blocks'
   ConfirmAbandonAllClaims:
-    Text: Are you sure you want to abandon ALL of your claims?  Please confirm with
-      /abandonallclaims confirm
+    Text: 你确定要放弃所有领地吗？请使用 /abandonallclaims confirm 确认。
   CantGrantThatPermission:
-    Text: You can't grant a permission you don't have yourself.
+    Text: 你不能授予自己都没有的权限。
   ManageUniversalPermissionsInstruction:
-    Text: To manage permissions for ALL your claims, stand outside them.
+    Text: 要管理所有领地的权限，请站在领地外面。
   ManageOneClaimPermissionsInstruction:
-    Text: To manage permissions for a specific claim, stand inside it.
+    Text: 要管理特定领地的权限，请站在其中。
   CollectivePublic:
-    Text: the public
+    Text: 公共
     Notes: as in 'granted the public permission to...'
   BuildPermission:
-    Text: build
+    Text: 建造
   ContainersPermission:
-    Text: access containers and animals
+    Text: 访问容器和动物
   AccessPermission:
-    Text: use buttons and levers
+    Text: 使用按钮和拉杆
   PermissionsPermission:
-    Text: manage permissions
+    Text: 管理权限
   SiegeNoDrop:
-    Text: You can't give away items while involved in a siege.
+    Text: 围攻期间无法丢弃物品。
   ChestFull:
-    Text: This chest is full.
+    Text: 这个箱子已满。
   DonationSuccess:
-    Text: Item(s) transferred to chest!
+    Text: 物品已转移到箱子！
   PlayerTooCloseForFire2:
-    Text: You can't start a fire this close to another player.
+    Text: 你不能在离其他玩家这么近的地方生火。
   TooDeepToClaim:
-    Text: This chest can't be protected because it's too deep underground.  Consider
-      moving it.
+    Text: 这个箱子太深了，无法保护。考虑移动它。
   ChestClaimConfirmation:
-    Text: This chest is protected.
+    Text: 这个箱子受到保护。
   AutomaticClaimOtherClaimTooClose:
-    Text: Cannot create a claim for your chest, there is another claim too close!
+    Text: 无法为你的箱子创建领地，附近有其他领地！
   UnprotectedChestWarning:
-    Text: This chest is NOT protected.  Consider using a golden shovel to expand an
-      existing claim or to create a new one.
+    Text: 这个箱子没有受到保护。考虑使用金铲扩展现有领地或创建新领地。
   ThatPlayerPvPImmune:
-    Text: You can't injure defenseless players.
+    Text: 你不能伤害毫无防御的玩家。
   CantFightWhileImmune:
-    Text: You can't fight someone while you're protected from PvP.
+    Text: 在 PvP 保护期间无法战斗。
   NoDamageClaimedEntity:
-    Text: That belongs to {0}.
+    Text: 那属于 {0}。
     Notes: '0: owner name'
   ShovelBasicClaimMode:
-    Text: Shovel returned to basic claims mode.
+    Text: 铲子已返回基础领地模式。
   RemainingBlocks:
-    Text: You may claim up to {0} more blocks.
+    Text: 你还可以圈地 {0} 个方块。
     Notes: '0: remaining blocks'
   CreativeBasicsVideo2:
-    Text: 'Click for Land Claim Help: {0}'
+    Text: 点击查看领地圈地帮助：{0}
     Notes: '{0}: video URL'
   SurvivalBasicsVideo2:
-    Text: 'Click for Land Claim Help: {0}'
+    Text: 点击查看领地圈地帮助：{0}
     Notes: '{0}: video URL'
   TrappedChatKeyword:
-    Text: trapped;stuck
+    Text: trapped;stuck;被困;卡住
     Notes: When mentioned in chat, players get information about the /trapped command
       (multiple words can be separated with semi-colons)
   TrappedInstructions:
-    Text: Are you trapped in someone's land claim?  Try the /trapped command.
+    Text: 你被困在别人的领地里了吗？尝试使用 /trapped 命令。
   PvPNoDrop:
-    Text: You can't drop items while in PvP combat.
+    Text: PvP 战斗中无法丢弃物品。
   SiegeNoTeleport:
-    Text: You can't teleport out of a besieged area.
+    Text: 你无法从被围攻的区域传送出去。
   BesiegedNoTeleport:
-    Text: You can't teleport into a besieged area.
+    Text: 你无法传送到被围攻的区域。
   SiegeNoContainers:
-    Text: You can't access containers while involved in a siege.
+    Text: 围攻期间无法访问容器。
   PvPNoContainers:
-    Text: You can't access containers during PvP combat.
+    Text: PvP 战斗中无法访问容器。
   NoBedPermission:
-    Text: '{0} hasn''t given you permission to sleep here.'
+    Text: '{0} 没有给你在这里睡觉的权限。'
     Notes: '0: claim owner'
   NoWildernessBuckets:
-    Text: You may only dump buckets inside your claim(s) or underground.
+    Text: 你只能在你的领地内或地下倾倒水桶。
   NoLavaNearOtherPlayer:
-    Text: You can't place lava this close to {0}.
+    Text: 你不能在离 {0} 这么近的地方放置岩浆。
     Notes: '0: nearby player'
   TooFarAway:
-    Text: That's too far away.
+    Text: 那里太远了。
   BlockNotClaimed:
-    Text: No one has claimed this block.
+    Text: 没有人圈地这个方块。
   BlockClaimed:
-    Text: That block has been claimed by {0}.
+    Text: 该方块已被 {0} 圈地。
     Notes: '0: claim owner'
   SiegeNoShovel:
-    Text: You can't use your shovel tool while involved in a siege.
+    Text: 围攻期间无法使用铲子工具。
   RestoreNaturePlayerInChunk:
-    Text: Unable to restore.  {0} is in that chunk.
+    Text: 无法恢复。{0} 在该区块中。
     Notes: '0: nearby player'
   NoCreateClaimPermission:
-    Text: You don't have permission to claim land.
+    Text: 你没有权限圈地。
   ResizeNeedMoreBlocks:
-    Text: You don't have enough blocks for this size.  You need {0} more.
+    Text: 你没有足够的方块来调整大小。你还需要 {0} 个。
     Notes: '0: how many needed'
   ClaimResizeSuccess:
-    Text: Claim resized.  {0} available claim blocks remaining.
+    Text: 领地已调整大小。剩余 {0} 个可用领地方块。
     Notes: '0: remaining blocks'
   ResizeFailOverlapSubdivision:
-    Text: You can't create a subdivision here because it would overlap another subdivision.  Consider
-      /abandonclaim to delete it, or use your shovel at a corner to resize it.
+    Text: 你无法在这里创建子领地，因为会与其他子领地重叠。考虑使用 /abandonclaim 删除它，或在角落使用铲子调整大小。
   SubdivisionStart:
-    Text: Subdivision corner set!  Use your shovel at the location for the opposite
-      corner of this new subdivision.
+    Text: 子领地角落已设置！使用铲子在对角位置设置新子领地的另一个角。
   CreateSubdivisionOverlap:
-    Text: Your selected area overlaps another subdivision.
+    Text: 你选择的区域与其他子领地重叠。
   SubdivisionSuccess:
-    Text: Subdivision created!  Use /trust to share it with friends.
+    Text: 子领地已创建！使用 /trust 与朋友分享。
   ClaimsDisabledWorld:
-    Text: Land claims are disabled in this world.
+    Text: 此世界已禁用领地圈地。
   NewClaimTooNarrow:
-    Text: This claim would be too small.  Any claim must be at least {0} blocks wide.
+    Text: 这个领地太小了。任何领地必须至少 {0} 个方块宽。
     Notes: '0: minimum claim width'
   CreateClaimInsufficientBlocks:
-    Text: You don't have enough blocks to claim that entire area.  You need {0} more
-      blocks.
+    Text: 你没有足够的方块来圈地整个区域。你还需要 {0} 个方块。
     Notes: '0: additional blocks needed'
   AbandonClaimAdvertisement:
-    Text: To delete another claim and free up some blocks, use /abandonclaim.
+    Text: 要删除另一个领地并释放一些方块，使用 /abandonclaim。
   CreateClaimFailOverlapShort:
-    Text: Your selected area overlaps an existing claim.
+    Text: 你选择的区域与现有领地重叠。
   CreateClaimSuccess:
-    Text: Claim created!  Use /trust to share it with friends.
+    Text: 领地已创建！使用 /trust 与朋友分享。
   SiegeWinDoorsOpen:
-    Text: Congratulations!  Buttons and levers are temporarily unlocked.
+    Text: 恭喜！按钮和拉杆已暂时解锁。
   RescueAbortedMoved:
-    Text: You moved!  Rescue cancelled.
+    Text: 你移动了！救援已取消。
   SiegeDoorsLockedEjection:
-    Text: Looting time is up!  Ejected from the claim.
+    Text: 掠夺时间结束！已被驱逐出领地。
   NoModifyDuringSiege:
-    Text: Claims can't be modified while under siege.
+    Text: 围攻期间无法修改领地。
   NoBuildUnderSiege:
-    Text: This claim is under siege by {0}.  No one can build here.
+    Text: 这个领地正被 {0} 围攻。没有人可以在这里建造。
     Notes: '0: attacker name'
   NonSiegeMaterial:
-    Text: That material is too tough to break.
+    Text: 该材料太坚硬，无法破坏。
   NoOwnerBuildUnderSiege:
-    Text: You can't make changes while under siege.
+    Text: 围攻期间无法进行更改。
   NoContainersSiege:
-    Text: This claim is under siege by {0}.  No one can access containers here right
-      now.
+    Text: 这个领地正被 {0} 围攻。现在没有人可以访问这里的容器。
     Notes: '0: attacker name'
   AutoBanNotify:
-    Text: Auto-banned {0}({1}).  See logs for details.
+    Text: 自动封禁 {0}({1})。详情请查看日志。
   AdjustGroupBlocksSuccess:
-    Text: 'Adjusted bonus claim blocks for players with the {0} permission by {1}.  New
-      total: {2}.'
+    Text: 已为拥有 {0} 权限的玩家调整奖励领地方块 {1} 个。新总数：{2}。
     Notes: '0: permission; 1: adjustment amount; 2: new total bonus'
   HowToClaimRegex:
-    Text: (^|.*\W)how\W.*\W(claim|protect|lock)(\W.*|$)
+    Text: (^|.*\W)(how|如何|怎么|怎样)\W.*\W(claim|protect|lock|圈地|保护|锁定)(\W.*|$)
     Notes: This is a Java Regular Expression.  Look it up before editing!  It's used
       to tell players about the demo video when they ask how to claim land.
   NoBuildOutsideClaims:
-    Text: You can't build here unless you claim some land first.
+    Text: 你无法在这里建造，除非你先圈地。
   PlayerOfflineTime:
-    Text: '  Last login: {0} days ago.'
+    Text: '  最后登录：{0} 天前。'
     Notes: '0: number of full days since last login'
   BuildingOutsideClaims:
-    Text: Other players can build here, too.  Consider creating a land claim to protect
-      your work!
+    Text: 其他玩家也可以在这里建造。考虑创建领地来保护你的作品！
   TrappedWontWorkHere:
-    Text: Sorry, unable to find a safe location to teleport you to.  Contact an admin.
+    Text: 抱歉，无法找到安全的位置传送你。请联系管理员。
   UnclaimCleanupWarning:
-    Text: The land you've unclaimed may be changed by other players or cleaned up
-      by administrators.  If you've built something there you want to keep, you should
-      reclaim it.
+    Text: 你取消圈地的土地可能会被其他玩家更改或被管理员清理。如果你在那里建造了想要保留的东西，应该重新圈地。
   BuySellNotConfigured:
-    Text: Sorry, buying and selling claim blocks is disabled.
+    Text: 抱歉，购买和出售领地方块已被禁用。
   NoTeleportPvPCombat:
-    Text: You can't teleport while fighting another player.
+    Text: 与其他玩家战斗时无法传送。
   NoTNTDamageAboveSeaLevel:
-    Text: 'Warning: TNT will not destroy blocks above sea level.'
+    Text: 警告：TNT 不会破坏海平面以上的方块。
   NoTNTDamageClaims:
-    Text: 'Warning: TNT will not destroy claimed blocks.'
+    Text: 警告：TNT 不会破坏已圈地的方块。
   IgnoreClaimsAdvertisement:
-    Text: To override, use /ignoreclaims.
+    Text: 要覆盖此限制，使用 /ignoreclaims。
   NoPermissionForCommand:
-    Text: You don't have permission to do that.
+    Text: 你没有权限执行该操作。
   ExplosivesDisabled:
-    Text: This claim is now protected from explosions.  Use /claimexplosions again
-      to disable.
+    Text: 此领地现在已受到爆炸保护。再次使用 /claimexplosions 来禁用。
   ExplosivesEnabled:
-    Text: This claim is now vulnerable to explosions.  Use /claimexplosions again
-      to re-enable protections.
+    Text: 此领地现在容易受到爆炸影响。再次使用 /claimexplosions 重新启用保护。
   ClaimExplosivesAdvertisement:
-    Text: To allow explosives to destroy blocks in this land claim, use /claimexplosions.
+    Text: 要允许爆炸物破坏此领地中的方块，使用 /claimexplosions。
   PlayerInPvPSafeZone:
-    Text: That player is in a PvP safe zone.
+    Text: 该玩家在 PvP 安全区内。
   NoPistonsOutsideClaims:
-    Text: 'Warning: Pistons won''t move blocks outside land claims.'
+    Text: 警告：活塞不会移动领地外的方块。
   SoftMuted:
-    Text: Soft-muted {0}.
+    Text: 已软禁言 {0}。
     Notes: '0: The changed player''s name.'
   UnSoftMuted:
-    Text: Un-soft-muted {0}.
+    Text: 已取消软禁言 {0}。
     Notes: '0: The changed player''s name.'
   DropUnlockAdvertisement:
-    Text: Other players can't pick up your dropped items unless you /unlockdrops first.
+    Text: 其他玩家无法捡起你的掉落物，除非你先使用 /unlockdrops 指令。
   PickupBlockedExplanation:
-    Text: You can't pick this up unless {0} uses /unlockdrops.
+    Text: 你无法捡起这个物品，除非 {0} 使用 /unlockdrops 指令。
     Notes: '0: The item stack''s owner.'
   DropUnlockConfirmation:
-    Text: Unlocked your drops.  Other players may now pick them up (until you die
-      again).
+    Text: 已解锁你的掉落物。其他玩家现在可以捡起它们（直到你再次死亡）。
   DropUnlockOthersConfirmation:
-    Text: Unlocked {0}'s drops.
+    Text: 已解锁 {0} 的掉落物。
     Notes: '0: The owner of the unlocked drops.'
   AdvertiseACandACB:
-    Text: You may use /acb to give yourself more claim blocks, or /adminclaims to
-      create a free administrative claim.
+    Text: 你可以使用 /acb 给自己更多领地方块，或使用 /adminclaims 创建免费的管理领地。
   AdvertiseAdminClaims:
-    Text: You could create an administrative land claim instead using /adminclaims,
-      which you'd share with other administrators.
+    Text: 你可以使用 /adminclaims 创建管理领地，与其他管理员共享。
   AdvertiseACB:
-    Text: You may use /acb to give yourself more claim blocks.
+    Text: 你可以使用 /acb 给自己更多领地方块。
   BecomeMayor:
-    Text: Subdivide your land claim and become a mayor!
+    Text: 细分你的领地，成为市长！
   ClaimCreationFailedOverClaimCountLimit:
-    Text: You've reached your limit on land claims.  Use /abandonclaim to remove one
-      before creating another.
+    Text: 你已达到领地数量上限。在创建新领地之前，请使用 /abandonclaim 删除一个。
   CreateClaimFailOverlapRegion:
-    Text: You can't claim all of this because you're not allowed to build here.
+    Text: 你无法圈地这里，因为你不被允许在这里建造。
   ResizeFailOverlapRegion:
-    Text: You don't have permission to build there, so you can't claim that area.
+    Text: 你没有在那里建造的权限，所以无法圈地该区域。
   ShowNearbyClaims:
-    Text: Found {0} land claims.
+    Text: 找到 {0} 个领地。
     Notes: '0: Number of claims found.'
   NoChatUntilMove:
-    Text: Sorry, but you have to move a little more before you can chat.  We get lots
-      of spam bots here.  :)
+    Text: 抱歉，你需要稍微移动一下才能聊天。我们这里有很多垃圾机器人。:)
   SiegeImmune:
-    Text: That player is immune to /siege.
+    Text: 该玩家对 /siege 免疫。
   SetClaimBlocksSuccess:
-    Text: Updated accrued claim blocks.
+    Text: 已更新累积的领地方块。
   IgnoreConfirmation:
-    Text: You're now ignoring chat messages from that player.
+    Text: 你现在忽略该玩家的聊天消息。
   NotIgnoringPlayer:
-    Text: You're not ignoring that player.
+    Text: 你没有忽略该玩家。
   UnIgnoreConfirmation:
-    Text: You're no longer ignoring chat messages from that player.
+    Text: 你不再忽略该玩家的聊天消息。
   SeparateConfirmation:
-    Text: Those players will now ignore each other in chat.
+    Text: 这些玩家现在将在聊天中互相忽略。
   UnSeparateConfirmation:
-    Text: Those players will no longer ignore each other in chat.
+    Text: 这些玩家将不再在聊天中互相忽略。
   NotIgnoringAnyone:
-    Text: You're not ignoring anyone.
+    Text: 你没有忽略任何人。
   EndBlockMath:
-    Text: ' = {0} blocks left to spend'
+    Text: ' = 剩余 {0} 个方块可用'
   NoClaimDuringPvP:
-    Text: You can't claim lands during PvP combat.
+    Text: PvP 战斗中无法圈地。
   BookAuthor:
-    Text: BigScary
+    Text: 服务器管理员
   BookTitle:
-    Text: How to Claim Land
+    Text: 如何圈地
   BookIntro:
-    Text: Claim land to protect your stuff!  Click the link above to learn land claims
-      in 3 minutes or less.  :)
+    Text: 圈地来保护你的物品！点击上面的链接，3 分钟内学会领地圈地。:)
   BookDisabledChestClaims:
-    Text: '  On this server, placing a chest will NOT claim land for you.'
+    Text: '  在此服务器上，放置箱子不会自动为你圈地。'
   BookUsefulCommands:
-    Text: 'Useful Commands:'
+    Text: 有用的命令：
   BookLink:
-    Text: 'Click: {0}'
+    Text: 点击：{0}
     Notes: '{0}: video URL'
   BookTools:
-    Text: Our claim tools are {0} and {1}.
+    Text: 我们的圈地工具是 {0} 和 {1}。
     Notes: '0: claim modification tool name; 1:claim information tool name'
   ResizeClaimTooNarrow:
-    Text: This new size would be too small.  Claims must be at least {0} blocks wide.
+    Text: 这个新大小太小了。领地必须至少 {0} 个方块宽。
     Notes: '0: minimum claim width'
   ResizeClaimInsufficientArea:
-    Text: This claim would be too small.  Any claim must use at least {0} total claim
-      blocks.
+    Text: 这个领地太小了。任何领地必须至少使用 {0} 个领地方块。
     Notes: '0: minimum claim area'
   NoProfanity:
-    Text: Please moderate your language.
+    Text: 请注意你的措辞。
   PlayerNotIgnorable:
-    Text: You can't ignore that player.
+    Text: 你不能忽略该玩家。
   NoEnoughBlocksForChestClaim:
-    Text: Because you don't have any claim blocks available, no automatic land claim
-      was created for you.  You can use /claimslist to monitor your available claim
-      block total.
+    Text: 因为你没有任何可用的领地方块，所以没有为你自动创建领地。你可以使用 /claimslist 来监控你的可用领地方块总数。
   IsIgnoringYou:
-    Text: That player is ignoring you.
+    Text: 该玩家正在忽略你。
   MustHoldModificationToolForThat:
-    Text: You must be holding a golden shovel to do that.
+    Text: 你必须手持金铲才能执行此操作。
   StandInClaimToResize:
-    Text: Stand inside the land claim you want to resize.
+    Text: 站在你想要调整大小的领地内。
   ClaimsExtendToSky:
-    Text: Land claims always extend to max build height.
+    Text: 领地总是延伸到最大建造高度。
   ClaimsAutoExtendDownward:
-    Text: Land claims auto-extend deeper into the ground when you place blocks under
-      them.
+    Text: 当你在领地下方放置方块时，领地会自动向下延伸。
   MinimumRadius:
-    Text: Minimum radius is {0}.
+    Text: 最小半径为 {0}。
     Notes: '0: minimum radius'
   RadiusRequiresGoldenShovel:
-    Text: You must be holding a golden shovel when specifying a radius.
+    Text: 指定半径时必须手持金铲。
   ClaimTooSmallForActiveBlocks:
-    Text: This claim isn't big enough to support any active block types (hoppers,
-      spawners, beacons...).  Make the claim bigger first.
+    Text: 这个领地太小，无法支持任何活动方块类型（漏斗、刷怪笼、信标等）。请先扩大领地。
   TooManyActiveBlocksInClaim:
-    Text: This claim is at its limit for active block types (hoppers, spawners, beacons...).  Either
-      make it bigger, or remove other active blocks first.
+    Text: 这个领地已达到活动方块类型（漏斗、刷怪笼、信标等）的上限。要么扩大领地，要么先移除其他活动方块。
   ConsoleOnlyCommand:
-    Text: That command may only be executed from the server console.
+    Text: 该命令只能从服务器控制台执行。
   WorldNotFound:
-    Text: World not found.
+    Text: 世界未找到。
   AdjustBlocksAllSuccess:
-    Text: Adjusted all online players' bonus claim blocks by {0}.
+    Text: 已为所有在线玩家调整奖励领地方块 {0} 个。
     Notes: '0: adjustment amount'
   TooMuchIpOverlap:
-    Text: Sorry, there are too many players logged in with your IP address.
+    Text: 抱歉，使用你IP地址登录的玩家过多。
   StandInSubclaim:
-    Text: You need to be standing in a subclaim to restrict it
+    Text: 你需要站在子领地内才能限制它
   SubclaimRestricted:
-    Text: This subclaim's permissions will no longer inherit from the parent claim
+    Text: 此子领地的权限将不再继承自主领地
   SubclaimUnrestricted:
-    Text: This subclaim's permissions will now inherit from the parent claim
+    Text: 此子领地的权限现在将继承自主领地
   NetherPortalTrapDetectionMessage:
-    Text: It seems you might be stuck inside a nether portal. We will rescue you in
-      a few seconds if that is the case!
+    Text: 看起来你可能被困在下界传送门中。如果是这样，我们将在几秒钟后救援你！
     Notes: Sent to player on join, if they left while inside a nether portal.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

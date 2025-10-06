@@ -364,9 +364,10 @@ player-commands:
   - afk.auto
   - back
   - back.ondeath
-  - balance
-  - balance.others
-  - balancetop
+  # 经济系统已禁用，以下权限已注释但保留
+  #- balance
+  #- balance.others
+  #- balancetop
   - build
   - chat.color
   - chat.format
@@ -396,7 +397,7 @@ player-commands:
   - msg.color
   - nick
   - near
-  - pay
+  #- pay  # 经济系统已禁用
   - ping
   - protect
   - r
@@ -404,15 +405,15 @@ player-commands:
   - renamehome
   - realname
   - seen
-  - sell
+  #- sell  # 经济系统已禁用
   - sethome
   - setxmpp
   - signs.create.protection
   - signs.create.trade
   - signs.break.protection
   - signs.break.trade
-  - signs.use.balance
-  - signs.use.buy
+  #- signs.use.balance  # 经济系统已禁用
+  #- signs.use.buy  # 经济系统已禁用
   - signs.use.disposal
   - signs.use.enchant
   - signs.use.free
@@ -423,7 +424,7 @@ player-commands:
   - signs.use.mail
   - signs.use.protection
   - signs.use.repair
-  - signs.use.sell
+  #- signs.use.sell  # 经济系统已禁用
   - signs.use.time
   - signs.use.trade
   - signs.use.warp
@@ -438,7 +439,7 @@ player-commands:
   - warp
   - warp.list
   - world
-  - worth
+  #- worth  # 经济系统已禁用
   - xmpp
 
 # Use this option to force superperms-based permissions handler regardless of detected installed perms plugin.
@@ -591,10 +592,8 @@ per-warp-permission: false
 # 详细说明和例子可以在wiki上找到：http://wiki.ess3.net/wiki/List
 list:
     # To merge groups, list the groups you wish to merge
-    #Staff: owner admin moderator
     # 要合并组,请列出要合并的组
-    #Staff：服主、管理员
-    Admins: owner admin
+    Admins: admin
     # To limit groups, set a max user limit
     # 要限制组,请设置最大玩家限制数目
     #builder: 20
@@ -730,7 +729,7 @@ broadcast-afk-message: false
 
 # You can disable the death messages of Minecraft here.
 # 您可以在此处禁用 Minecraft 的死亡消息.
-death-messages: true
+death-messages: false
 
 # How should essentials handle players with the essentials.keepinv permission who have items with
 # curse of vanishing when they die?
@@ -1109,9 +1108,7 @@ world-home-permissions: false
 # 在下方创建'home-rank',并赋予匹配权限：essentials.sethome.multiple.<home-rank>
 # 欲了解更多信息,请访问 http://wiki.ess3.net/wiki/Multihome
 sethome-multiple:
-  default: 3
-  vip: 5
-  staff: 10
+  default: 5
 
 # In this example someone with 'essentials.sethome.multiple' and 'essentials.sethome.multiple.vip' will have 5 homes.
 # Remember, they MUST have both permission nodes in order to be able to set multiple homes.
@@ -1611,7 +1608,7 @@ newbies:
   # Set to "none" if you want to use the spawn point of the world.
   # 当我们第一次生成时,我们使用哪个生成点?
   # 如果你想使用世界的出生点,设置为"none".
-  spawnpoint: newbies
+  spawnpoint: none
 
   # Do we want to give users anything on first join? Set to '' to disable
   # This kit will be given regardless of cost and permissions, and will not trigger the kit delay.

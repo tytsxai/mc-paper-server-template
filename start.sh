@@ -10,7 +10,7 @@ if pgrep -f "paper.*jar" > /dev/null; then
 fi
 
 # 启动服务器（使用 screen 或 tmux 更好，但这里保持简单）
-nohup java -Xms20G -Xmx20G -jar paper-1.21.8-60.jar nogui > server.log 2>&1 &
+nohup java -Xms16G -Xmx22G -jar paper-1.21.8-60.jar nogui > server.log 2>&1 &
 
 PID=$!
 echo "Minecraft服务器正在启动... (PID: $PID)"

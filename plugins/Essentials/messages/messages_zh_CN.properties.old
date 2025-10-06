@@ -1,0 +1,63 @@
+# EssentialsX 中文语言文件
+# 编码: UTF-8
+
+# 死亡消息
+death={0} 死了
+deathmessages=true
+
+# 常用消息
+action.click=点击
+action.shiftClick=Shift+点击
+
+# 传送消息
+teleportAtoB={0} 传送到了 {1}。
+teleportDisabled={0} 的传送功能已禁用。
+teleportHereRequest={0} 请求传送到你这里。
+teleportNewPlayerError=传送新玩家失败！
+teleportRequest={0} 请求传送到你这里。
+teleportRequestTimeoutInfo=§6此请求将在 {0} 秒后过期。
+teleportTop=§7正在传送到顶部。
+teleportationCommencing=§7开始传送...
+teleportationDisabled=§6传送功能已禁用。
+teleportationEnabled=§6传送功能已启用。
+teleporting=§7传送中...
+teleportingPortal=§7正在通过传送门传送。
+
+# 时间消息
+timeSet=时间已在所有世界设置为 {0}。
+timeSetAll=所有世界的时间已设置为 {0}。
+timeWorldCurrent=当前时间在 {0} 是 §c{1}§f。
+timeWorldSet={0} 的时间已设置为 {1}。
+
+# 玩家消息
+playerNotFound=§4玩家未找到。
+playerNeverOnServer=§4玩家 {0} 从未在此服务器上。
+
+# 经济消息
+balance=§a余额：§c{0}
+balanceTop=§6余额排行榜（{0}/{1}）
+worth=§a价值：§c{0}§a（{1} 个物品，每个 {2}）
+worthSet=价值已设置
+
+# 家和传送点
+homes=家：{0}
+homeSet=§7家已设置。
+warpSet=§7传送点 {0} 已设置。
+warps=传送点：{0}
+warpingTo=§7正在传送到 {0}。
+
+# 其他常用消息
+godMode=§7上帝模式 {0}。
+godDisabled=已禁用
+godEnabled=已启用
+heal=§7你已被治疗。
+helpPages=第 §c{0}§f 页，共 §c{1}§f 页：
+helpLine={0}§7: {1}
+
+# 新手指南相关
+motd=欢迎来到服务器！
+newPlayerAnnounce=§6欢迎 {0} 加入服务器！
+
+# 错误消息
+errorWithMessage=§4错误：{0}
+invalidWorld=§4无效的世界。
