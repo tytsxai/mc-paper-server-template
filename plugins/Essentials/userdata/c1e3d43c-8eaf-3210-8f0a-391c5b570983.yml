@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 47.108.129.185
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1759631813664
+  login: 1759631693616
+money: '0'
+last-account-name: FSY
+lastlocation:
+  world: 8b51011f-0d94-4c1c-a8a0-1165ef5bdf63
+  world-name: world
+  x: 10.5
+  y: 77.0
+  z: 7.5
+  yaw: 0.0
+  pitch: 0.0
+logoutlocation:
+  world: 8b51011f-0d94-4c1c-a8a0-1165ef5bdf63
+  world-name: world
+  x: 0.7030134777520005
+  y: 72.0
+  z: 0.01495347631146071
+  yaw: -147.75003051757812
+  pitch: 26.25

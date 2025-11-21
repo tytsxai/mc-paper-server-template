@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 47.108.129.185
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1759891949491
+  login: 1759891936156
+money: '0'
+last-account-name: '193158139'
+lastlocation:
+  world: 43f83d55-9e3f-4a78-b908-8fc240d1f918
+  world-name: QQ群539136479
+  x: 10.5
+  y: 110.0
+  z: -5.5
+  yaw: 0.0
+  pitch: 0.0
+logoutlocation:
+  world: 43f83d55-9e3f-4a78-b908-8fc240d1f918
+  world-name: 服务器
+  x: -121.95388348976876
+  y: 77.0
+  z: -85.55263095248044
+  yaw: 15.925543785095215
+  pitch: 49.49995040893555

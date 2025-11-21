@@ -1,0 +1,138 @@
+# 注册相关
+'registration':
+    'disabled': '&c游戏内注册已被禁用！'
+    'name_taken': '&c该用户名已被注册！'
+    'register_request': '&3请使用命令注册: /register <密码> <确认密码>'
+    'command_usage': '&c用法: /register <密码> <确认密码>'
+    'reg_only': '&4仅限已注册玩家进入！请访问 http://example.com 注册'
+    'success': '&2注册成功！'
+    'kicked_admin_registered': '管理员已为您注册，请重新登录。'
+# 注册时的密码错误
+'password':
+    'match_error': '&c两次输入的密码不匹配，请重新检查！'
+    'name_in_password': '&c不能使用您的用户名作为密码，请选择其他密码...'
+    'unsafe_password': '&c该密码不安全，请选择其他密码...'
+    'forbidden_characters': '&4您的密码包含非法字符。允许的字符: %valid_chars'
+    'wrong_length': '&c您的密码太短或太长！请尝试其他密码！'
+# 登录相关
+'login':
+    'command_usage': '&c用法: /login <密码>'
+    'wrong_password': '&c密码错误！'
+    'success': '&2登录成功！'
+    'login_request': '&c请使用命令登录: /login <密码>'
+    'timeout_error': '&4登录超时，您已被踢出服务器，请重试！'
+# 错误信息
+'error':
+    'denied_command': '&c您必须先登录才能使用此命令！'
+    'denied_chat': '&c您必须先登录才能聊天！'
+    'unregistered_user': '&c该用户未注册！'
+    'not_logged_in': '&c您还未登录！'
+    'no_permission': '&4您没有权限执行此操作！'
+    'unexpected_error': '&4发生意外错误，请联系管理员！'
+    'max_registration': '&c您已超过该连接允许的最大注册数 (%reg_count/%max_acc %reg_names)！'
+    'logged_in': '&c您已经登录了！'
+    'kick_for_vip': '&3服务器已满时有VIP玩家加入！'
+    'kick_unresolved_hostname': '&c发生错误：无法解析玩家主机名！'
+    'tempban_max_logins': '&c由于多次登录失败，您已被临时封禁。'
+# 反机器人
+'antibot':
+    'kick_antibot': '反机器人保护模式已启用！您需要等待几分钟后才能加入服务器。'
+    'auto_enabled': '&4[反机器人服务] 由于大量连接，反机器人已启用！'
+    'auto_disabled': '&2[反机器人服务] 反机器人已在 %m 分钟后禁用！'
+# 注销账户
+'unregister':
+    'success': '&c成功注销账户！'
+    'command_usage': '&c用法: /unregister <密码>'
+# 其他消息
+'misc':
+    'account_not_activated': '&c您的账户尚未激活，请检查您的邮箱！'
+    'password_changed': '&2密码修改成功！'
+    'logout': '&2登出成功！'
+    'reload': '&2配置和数据库已正确重载！'
+    'usage_change_password': '&c用法: /changepassword <旧密码> <新密码>'
+    'accounts_owned_self': '您拥有 %count 个账户:'
+    'accounts_owned_other': '玩家 %name 拥有 %count 个账户:'
+# 会话消息
+'session':
+    'valid_session': '&2由于会话重连，已自动登录。'
+    'invalid_session': '&c您的IP已更改，会话数据已过期！'
+# 加入服务器时的错误消息
+'on_join_validation':
+    'same_ip_online': '相同IP的玩家已在游戏中！'
+    'same_nick_online': '&4该用户名已在服务器中！'
+    'name_length': '&4您的用户名太短或太长！'
+    'characters_in_name': '&4您的用户名包含非法字符。允许的字符: %valid_chars'
+    'kick_full_server': '&4服务器已满，请稍后再试！'
+    'country_banned': '&4您所在的国家/地区已被此服务器封禁！'
+    'not_owner_error': '您不是此账户的所有者。请选择其他用户名！'
+    'invalid_name_case': '您应该使用用户名 %valid 加入，而不是 %invalid。'
+    'quick_command': '您使用命令过快！请重新加入服务器并等待后再使用命令。'
+# 邮箱
+'email':
+    'add_email_request': '&3请使用命令将邮箱添加到您的账户: /email add <您的邮箱> <确认邮箱>'
+    'usage_email_add': '&c用法: /email add <邮箱> <确认邮箱>'
+    'usage_email_change': '&c用法: /email change <旧邮箱> <新邮箱>'
+    'new_email_invalid': '&c新邮箱无效，请重试！'
+    'old_email_invalid': '&c旧邮箱无效，请重试！'
+    'invalid': '&c邮箱地址无效，请重试！'
+    'added': '&2邮箱地址已成功添加到您的账户！'
+    'add_not_allowed': '&c不允许添加邮箱。'
+    'request_confirmation': '&c请确认您的邮箱地址！'
+    'changed': '&2邮箱地址修改成功！'
+    'change_not_allowed': '&c不允许修改邮箱。'
+    'email_show': '&2您当前的邮箱地址是: &f%email'
+    'no_email_for_account': '&2您目前没有与此账户关联的邮箱地址。'
+    'already_used': '&4该邮箱地址已被使用'
+    'incomplete_settings': '错误：发送邮件所需的设置不完整。请联系管理员。'
+    'send_failure': '无法发送邮件。请联系管理员。'
+    'change_password_expired': '您不能再使用此命令更改密码。'
+    'email_cooldown_error': '&c最近已发送过邮件。您必须等待 %time 才能发送新邮件。'
+# 通过邮箱找回密码
+'recovery':
+    'forgot_password_hint': '&3忘记密码了？请使用命令: /email recovery <您的邮箱>'
+    'command_usage': '&c用法: /email recovery <邮箱>'
+    'email_sent': '&2找回邮件已成功发送！请检查您的邮箱！'
+    'code':
+        'code_sent': '用于重置密码的恢复代码已发送到您的邮箱。'
+        'incorrect': '恢复代码不正确！您还有 %count 次尝试机会。'
+        'tries_exceeded': '您已超过输入恢复代码的最大尝试次数。使用 "/email recovery [邮箱]" 生成新的代码。'
+        'correct': '恢复代码输入正确！'
+        'change_password': '请立即使用命令 /email setpassword <新密码> 更改您的密码。'
+# 验证码
+'captcha':
+    'usage_captcha': '&3要登录您需要解决验证码，请使用命令: /captcha %captcha_code'
+    'wrong_captcha': '&c验证码错误，请在聊天中输入 "/captcha %captcha_code"！'
+    'valid_captcha': '&2验证码正确！'
+    'captcha_for_registration': '要注册您需要先解决验证码，请使用命令: /captcha %captcha_code'
+    'register_captcha_valid': '&2验证码有效！您现在可以使用 /register 注册'
+# 验证代码
+'verification':
+    'code_required': '&3此命令需要邮箱验证！请检查您的收件箱并按照邮件说明操作。'
+    'command_usage': '&c用法: /verification <代码>'
+    'incorrect_code': '&c代码错误，请在聊天中输入 "/verification <代码>"，使用您通过邮件收到的代码'
+    'success': '&2您的身份已验证！您现在可以在当前会话中执行所有命令！'
+    'already_verified': '&2您已经可以在当前会话中执行所有敏感命令！'
+    'code_expired': '&3您的代码已过期！执行另一个敏感命令以获取新代码！'
+    'email_needed': '&3要验证您的身份，您需要将邮箱地址与您的账户关联！'
+# 时间单位
+'time':
+    'second': '秒'
+    'seconds': '秒'
+    'minute': '分钟'
+    'minutes': '分钟'
+    'hour': '小时'
+    'hours': '小时'
+    'day': '天'
+    'days': '天'
+# 双因素认证
+'two_factor':
+    'code_created': '&2您的密钥是 %code。您可以从这里扫描 %url'
+    'confirmation_required': '请使用 /2fa confirm <代码> 确认您的代码'
+    'code_required': '请使用 /2fa code <代码> 提交您的双因素认证代码'
+    'already_enabled': '您的账户已启用双因素认证！'
+    'enable_error_no_code': '未为您生成2FA密钥或已过期。请运行 /2fa add'
+    'enable_success': '成功为您的账户启用双因素认证'
+    'enable_error_wrong_code': '代码错误或已过期。请运行 /2fa add'
+    'not_enabled_error': '您的账户未启用双因素认证。运行 /2fa add'
+    'removed_success': '成功从您的账户移除双因素认证'
+    'invalid_code': '无效的代码！'

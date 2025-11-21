@@ -1,0 +1,19 @@
+name: PlayerMenu
+version: 1.0
+author: Server Admin
+main: com.mcserver.playermenu.PlayerMenuPlugin
+api-version: 1.21
+description: 玩家GUI菜单系统 - 降低指令使用成本
+
+commands:
+  menu:
+    description: 打开玩家菜单
+    usage: /menu
+    aliases: [菜单, cd, gui, mm, caidian]
+    permission: playermenu.use
+    permission-message: §c你没有权限使用此命令
+
+permissions:
+  playermenu.use:
+    description: 允许玩家使用菜单系统
+    default: true

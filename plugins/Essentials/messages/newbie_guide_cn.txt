@@ -1,0 +1,72 @@
+# ====================================
+# 新人指引消息文件
+# ====================================
+# 这个文件包含了发送给新玩家的所有引导消息
+# 使用 Essentials 的消息系统
+
+# 欢迎消息（首次加入）
+welcome_line_1=&6&l━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+welcome_line_2=&a&l✦ 欢迎来到我们的 Minecraft 服务器！
+welcome_line_3=&e你好，{PLAYER}！我是服务器的智能助手。
+welcome_line_4=&b让我来帮助你快速了解服务器的基本功能吧！
+welcome_line_5=&6&l━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 第一步：基础命令
+step1_title=&a&l【第一步】基础命令
+step1_line_1=&7▸ &f/spawn &7- 回到出生点
+step1_line_2=&7▸ &f/sethome [名称] &7- 设置家的位置
+step1_line_3=&7▸ &f/home [名称] &7- 传送到你的家
+step1_line_4=&7▸ &f/tpa <玩家名> &7- 请求传送到其他玩家
+step1_line_5=&7▸ &f/back &7- 返回上一个位置
+
+# 第二步：新手礼包
+step2_title=&b&l【第二步】新手礼包
+step2_line_1=&e你已经获得了基础工具包！
+step2_line_2=&7如果需要更多帮助，可以使用：
+step2_line_3=&7▸ &f/kit welcome &7- 领取新手礼包（仅一次）
+step2_line_4=&7▸ &f/kit tools &7- 领取工具包（冷却10秒）
+
+# 第三步：保护领地
+step3_title=&d&l【第三步】保护你的领地
+step3_line_1=&6服务器安装了 GriefPrevention 领地保护插件
+step3_line_2=&7▸ 使用 &f金铲子 &7右键点击两个对角来圈地
+step3_line_3=&7▸ &f/abandonclaim &7- 删除你所在的领地
+step3_line_4=&7▸ &f/trust <玩家名> &7- 信任玩家可以使用你的领地
+step3_line_5=&7▸ &f/untrust <玩家名> &7- 取消信任
+step3_line_6=&7▸ &f/claimslist &7- 查看你的所有领地
+
+# 第四步：社交互动
+step4_title=&c&l【第四步】社交与互动
+step4_line_1=&a服务器支持多种社交功能：
+step4_line_2=&7▸ &f/msg <玩家名> <消息> &7- 私聊其他玩家
+step4_line_3=&7▸ &f/r <消息> &7- 快速回复上一个私聊
+step4_line_4=&7▸ &f/sit &7- 坐下休息
+step4_line_5=&7▸ &f/lay &7- 躺下
+step4_line_6=&e&l加入我们的 QQ 群：&f539136479
+
+# 第五步：其他功能
+step5_title=&5&l【第五步】其他实用功能
+step5_line_1=&6更多实用命令：
+step5_line_2=&7▸ &f/suicide &7- 自杀（慎用）
+step5_line_3=&7▸ &f/warp &7- 查看可用的传送点
+step5_line_4=&7▸ &f/help &7- 查看帮助信息
+step5_line_5=&7▸ &f/rules &7- 查看服务器规则
+
+# 完成教程
+step6_title=&2&l【完成】开始你的冒险！
+step6_line_1=&a&l✔ 新手教程已完成！
+step6_line_2=&e现在你可以开始探索这个世界了！
+step6_line_3=&b记住：友善待人，遵守规则，享受游戏！
+step6_line_4=&d如果遇到问题，随时使用 &f/help &d查看帮助
+step6_line_5=&6&l祝你游戏愉快！ &c❤
+step6_line_6=&6&l━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 定期提示
+tip_1=&a&l[小提示] &7使用 &f/sethome &7可以设置多个家的位置哦！
+tip_2=&a&l[小提示] &7记得使用金铲子圈地保护你的建筑！
+tip_3=&a&l[小提示] &7使用 &f/tpa &7可以请求传送到其他玩家身边。
+tip_4=&a&l[小提示] &7服务器每30分钟会清理一次地面物品，记得及时收集！
+tip_5=&a&l[小提示] &7遇到问题？加入 QQ 群 539136479 寻求帮助！
+tip_6=&a&l[小提示] &7使用 &f/sit &7可以坐在任何地方休息。
+tip_7=&a&l[小提示] &7使用 &f/back &7可以返回上一个位置，死亡后也能用！
+tip_8=&a&l[小提示] &7使用 &f/trust <玩家名> &7可以让朋友在你的领地建造。
