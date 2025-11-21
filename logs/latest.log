@@ -1,0 +1,259 @@
+[06:59:58] [ServerMain/INFO]: [bootstrap] Running Java 21 (OpenJDK 64-Bit Server VM 21.0.8+9-Debian-1; Debian null) on Linux 6.12.43+deb13-amd64 (amd64)
+[06:59:58] [ServerMain/INFO]: [bootstrap] Loading Paper 1.21.8-60-main@29c8822 (2025-09-06T21:49:13Z) for Minecraft 1.21.8
+[06:59:58] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[06:59:59] [ServerMain/INFO]: [PluginInitializerManager] Initialized 22 plugins
+[06:59:59] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (22):
+ - AuthMe (5.6.0-beta2-b2453), ChestSort (14.2.0), ClearLag (3.2.2), CoreProtect (23.0), Essentials (2.21.2), EssentialsAntiBuild (2.21.2), EssentialsChat (2.21.2), EssentialsGeoIP (2.21.2), EssentialsProtect (2.21.2), EssentialsSpawn (2.21.2), FastAsyncWorldEdit (2.13.3-SNAPSHOT-1175;b935a07), GSit (2.4.3), GriefPrevention (16.18.4), LuckPerms (5.5.15), PlayerParticles (8.10), ProtocolLib (5.4.0), TAB (5.0.7), Vault (1.7.3-b131), ViaBackwards (5.5.0), ViaVersion (5.5.0), WorldBorder (1.9.10 (beta)), dirCopyOnStart (1.0)
+[07:00:04] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[07:00:05] [ServerMain/INFO]: Loaded 1407 recipes
+[07:00:05] [ServerMain/INFO]: Loaded 1520 advancements
+[07:00:05] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[07:00:06] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 444.1ms
+[07:00:06] [Server thread/INFO]: Starting minecraft server version 1.21.8
+[07:00:06] [Server thread/WARN]: ****************************
+[07:00:06] [Server thread/WARN]: YOU ARE RUNNING THIS SERVER AS AN ADMINISTRATIVE OR ROOT USER. THIS IS NOT ADVISED.
+[07:00:06] [Server thread/WARN]: YOU ARE OPENING YOURSELF UP TO POTENTIAL RISKS WHEN DOING THIS.
+[07:00:06] [Server thread/WARN]: FOR MORE INFORMATION, SEE https://madelinemiller.dev/blog/root-minecraft-server/
+[07:00:06] [Server thread/WARN]: ****************************
+[07:00:06] [Server thread/INFO]: Loading properties
+[07:00:06] [Server thread/INFO]: This server is running Paper version 1.21.8-60-main@29c8822 (2025-09-06T21:49:13Z) (Implementing API version 1.21.8-R0.1-SNAPSHOT)
+[07:00:06] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[07:00:06] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[07:00:06] [Server thread/INFO]: Using 8 threads for Netty based IO
+[07:00:07] [Server thread/ERROR]: [Configurations] Loading a newer configuration than is supported (31 > 30)! You may have to backup & delete your global config file to start the server.
+[07:00:07] [Server thread/INFO]: [MoonriseCommon] Paper is using 8 worker threads, 4 I/O threads
+[07:00:07] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using population gen parallelism: true
+[07:00:07] [Server thread/INFO]: Default game type: SURVIVAL
+[07:00:07] [Server thread/INFO]: Generating keypair
+[07:00:07] [Server thread/INFO]: Starting Minecraft server on *:20501
+[07:00:07] [Server thread/INFO]: Using default channel type
+[07:00:07] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[07:00:07] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[07:00:08] [Server thread/WARN]: [org.bukkit.craftbukkit.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[07:00:19] [Server thread/WARN]: Legacy plugin dirCopyOnStart v1.0 does not specify an api-version.
+[07:00:19] [Server thread/INFO]: [ViaVersion] Loading server plugin ViaVersion v5.5.0
+[07:00:19] [Server thread/INFO]: [ViaVersion] ViaVersion 5.5.0 is now loaded. Registering protocol transformers and injecting...
+[07:00:20] [Via-Mappingloader-0/INFO]: [ViaVersion] Loading block connection mappings ...
+[07:00:20] [Via-Mappingloader-0/INFO]: [ViaVersion] Using FastUtil Long2ObjectOpenHashMap for block connections
+[07:00:20] [Server thread/INFO]: [ViaBackwards] Loading translations...
+[07:00:20] [Server thread/INFO]: [ViaBackwards] Registering protocols...
+[07:00:21] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.15
+[07:00:21] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[07:00:21] [Server thread/INFO]: [Vault] Loading server plugin Vault v1.7.3-b131
+[07:00:21] [Server thread/INFO]: [Essentials] Loading server plugin Essentials v2.21.2
+[07:00:21] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.13.3-SNAPSHOT-1175;b935a07
+[07:00:22] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@3b3ea692]
+[07:00:22] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
+[07:00:22] [Server thread/INFO]: [EssentialsSpawn] Loading server plugin EssentialsSpawn v2.21.2
+[07:00:22] [Server thread/INFO]: [GriefPrevention] Loading server plugin GriefPrevention v16.18.4
+[07:00:22] [Server thread/INFO]: [ViaBackwards] Loading server plugin ViaBackwards v5.5.0
+[07:00:22] [Server thread/INFO]: [EssentialsChat] Loading server plugin EssentialsChat v2.21.2
+[07:00:22] [Server thread/INFO]: [EssentialsProtect] Loading server plugin EssentialsProtect v2.21.2
+[07:00:22] [Server thread/INFO]: [WorldBorder] Loading server plugin WorldBorder v1.9.10 (beta)
+[07:00:22] [Server thread/INFO]: [dirCopyOnStart] Loading server plugin dirCopyOnStart v1.0
+[07:00:22] [Server thread/INFO]: [AuthMe] Loading server plugin AuthMe v5.6.0-beta2-b2453
+[07:00:22] [Server thread/INFO]: [ClearLag] Loading server plugin ClearLag v3.2.2
+[07:00:22] [Server thread/INFO]: [PlayerParticles] Loading server plugin PlayerParticles v8.10
+[07:00:22] [Server thread/INFO]: [CoreProtect] Loading server plugin CoreProtect v23.0
+[07:00:22] [Server thread/INFO]: [GSit] Loading server plugin GSit v2.4.3
+[07:00:22] [Server thread/INFO]: [TAB] Loading server plugin TAB v5.0.7
+[07:00:22] [Server thread/INFO]: [EssentialsAntiBuild] Loading server plugin EssentialsAntiBuild v2.21.2
+[07:00:22] [Server thread/INFO]: [ChestSort] Loading server plugin ChestSort v14.2.0
+[07:00:22] [Server thread/INFO]: [EssentialsGeoIP] Loading server plugin EssentialsGeoIP v2.21.2
+[07:00:22] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[07:00:22] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.15
+[07:00:23] [Server thread/INFO]:         __    
+[07:00:23] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.15
+[07:00:23] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
+[07:00:23] [Server thread/INFO]: 
+[07:00:23] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
+[07:00:24] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[07:00:24] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[07:00:24] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 1362ms)
+[07:00:24] [Server thread/INFO]: [Vault] Enabling Vault v1.7.3-b131
+[07:00:24] [Server thread/INFO]: [Vault] [Economy] Essentials Economy found: Waiting
+[07:00:24] [Server thread/INFO]: [Vault] [Permission] SuperPermissions loaded as backup permission system.
+[07:00:24] [Server thread/INFO]: [Vault] Enabled Version 1.7.3-b131
+[07:00:24] [Server thread/INFO]: [LuckPerms] Registered Vault permission & chat hook.
+[07:00:24] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.13.3-SNAPSHOT-1175;b935a07
+[07:00:24] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[07:00:24] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[07:00:24] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[07:00:24] [Server thread/INFO]: WEPIF: Vault detected! Using Vault for permissions
+[07:00:24] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_21_6.PaperweightFaweAdapter as the Bukkit adapter
+[07:00:25] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
+[07:00:25] [Server thread/INFO]: [dirCopyOnStart] Enabling dirCopyOnStart v1.0*
+[07:00:25] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[07:00:25] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[07:00:25] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[07:00:25] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[07:00:25] [Server thread/INFO]: Preparing level "服务器"
+[07:00:25] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[07:00:26] [Server thread/INFO]: Preparing spawn area: 0%
+[07:00:26] [Server thread/INFO]: Preparing spawn area: 0%
+[07:00:26] [Server thread/INFO]: Time elapsed: 875 ms
+[07:00:26] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[07:00:26] [Server thread/INFO]: Preparing spawn area: 0%
+[07:00:26] [Server thread/INFO]: Time elapsed: 107 ms
+[07:00:26] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[07:00:26] [Server thread/INFO]: Preparing spawn area: 0%
+[07:00:26] [Server thread/INFO]: Time elapsed: 89 ms
+[07:00:26] [Server thread/INFO]: [ViaVersion] Enabling ViaVersion v5.5.0
+[07:00:26] [Server thread/INFO]: [ViaVersion] ViaVersion detected server version: 1.21.7-1.21.8 (772)
+[07:00:27] [Server thread/INFO]: [Essentials] Enabling Essentials v2.21.2
+[07:00:27] [Server thread/INFO]: [Essentials] Attempting to convert old kits in config.yml to new kits.yml
+[07:00:27] [Server thread/INFO]: [Essentials] No kits found to migrate.
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Legacy Biome Name Provider as the provider for BiomeNameProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.8.3+ Spawner Item Provider as the provider for SpawnerItemProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Paper Server State Provider as the provider for ServerStateProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Reflection Online Mode Provider as the provider for OnlineModeProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.17.1+ World Info Provider as the provider for WorldInfoProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Paper Biome Key Provider as the provider for BiomeKeyProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Reflection Formatted Command Alias Provider as the provider for FormattedCommandAliasProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.11+ Item Unbreakable Provider as the provider for ItemUnbreakableProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.20.5+ Banner Data Provider as the provider for BannerDataProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.12.2+ Player Locale Provider as the provider for PlayerLocaleProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.14+ Sign Data Provider as the provider for SignDataProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Paper Container Provider as the provider for ContainerProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.12+ Spawner Block Provider as the provider for SpawnerBlockProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Paper Material Tag Provider as the provider for MaterialTagProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.21+ InventoryView Interface ABI Provider as the provider for InventoryViewProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.21.4+ Sync Commands Provider as the provider for SyncCommandsProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.14.4+ Persistent Data Container Provider as the provider for PersistentDataProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Paper Tick Count Provider as the provider for TickCountProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Paper Known Commands Provider as the provider for KnownCommandsProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.20.6+ Potion Meta Provider as the provider for PotionMetaProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.13+ Spawn Egg Provider as the provider for SpawnEggProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected 1.20.4+ Damage Event Provider as the provider for DamageEventProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Selected Paper Serialization Provider as the provider for SerializationProvider
+[07:00:27] [Server thread/INFO]: [Essentials] Loaded 43880 items from items.json.
+[07:00:27] [Server thread/INFO]: [Essentials] Using locale zh
+[07:00:27] [Server thread/INFO]: [Essentials] ServerListPingEvent: Spigot iterator API
+[07:00:27] [Server thread/INFO]: [Essentials] Starting Metrics. Opt-out using the global bStats config.
+[07:00:27] [Server thread/INFO]: [Vault] [Economy] Essentials Economy hooked.
+[07:00:28] [Server thread/INFO]: [Essentials] Using Vault based permissions (LuckPerms)
+[07:00:28] [Server thread/INFO]: [EssentialsSpawn] Enabling EssentialsSpawn v2.21.2
+[07:00:28] [Server thread/INFO]: [EssentialsSpawn] Starting Metrics. Opt-out using the global bStats config.
+[07:00:28] [Server thread/INFO]: [GriefPrevention] Enabling GriefPrevention v16.18.4
+[07:00:28] [Server thread/INFO]: [GriefPrevention] Finished loading configuration.
+[07:00:28] [Server thread/INFO]: [GriefPrevention] Failed to load a claim (ID:0) because its world isn't loaded (yet?).  If this is not expected, delete this claim.
+[07:00:28] [Server thread/INFO]: [GriefPrevention] Failed to load a claim (ID:1) because its world isn't loaded (yet?).  If this is not expected, delete this claim.
+[07:00:28] [Server thread/INFO]: [GriefPrevention] 0 total claims loaded.
+[07:00:28] [Server thread/INFO]: [GriefPrevention] Customizable messages loaded.
+[07:00:28] [Server thread/INFO]: [GriefPrevention] Finished loading data (File Mode).
+[07:00:28] [Server thread/INFO]: [GriefPrevention] Boot finished.
+[07:00:28] [Server thread/INFO]: [ViaBackwards] Enabling ViaBackwards v5.5.0
+[07:00:28] [Server thread/INFO]: [EssentialsChat] Enabling EssentialsChat v2.21.2
+[07:00:28] [Server thread/INFO]: [EssentialsChat] Starting Metrics. Opt-out using the global bStats config.
+[07:00:28] [Server thread/INFO]: [EssentialsProtect] Enabling EssentialsProtect v2.21.2
+[07:00:28] [Server thread/INFO]: [EssentialsProtect] Continuing to enable Protect.
+[07:00:28] [Server thread/INFO]: [EssentialsProtect] Starting Metrics. Opt-out using the global bStats config.
+[07:00:28] [Server thread/INFO]: [WorldBorder] Enabling WorldBorder v1.9.10 (beta)
+[07:00:28] [Server thread/INFO]: [WorldBorder] [CONFIG] Using elliptic/round border, knockback of 3.0 blocks, and timer delay of 5.
+[07:00:28] [Server thread/INFO]: [WorldBorder] [CONFIG] Border-checking timed task started.
+[07:00:28] [Server thread/INFO]: [WorldBorder] For reference, the main world's spawn location is at X: 0.0 Y: 118.0 Z: 0.0
+[07:00:28] [Server thread/INFO]: [AuthMe] Enabling AuthMe v5.6.0-beta2-b2453
+[07:00:28] [Server thread/INFO]: [AuthMe] SQLite Setup finished
+[07:00:28] [Server thread/INFO]: [AuthMe] Hooked into LuckPerms!
+[07:00:28] [Server thread/INFO]: [AuthMe] Hooked successfully into Essentials
+[07:00:28] [Server thread/INFO]: [AuthMe] Essentials spawn file not found: '/root/minecraft-server/plugins/Essentials/spawn.yml'
+[07:00:29] [Server thread/INFO]: [AuthMe] AuthMe 5.6.0-beta2 build n.2453 successfully enabled!
+[07:00:29] [Server thread/INFO]: [ClearLag] Enabling ClearLag v3.2.2
+[07:00:29] [Server thread/INFO]: [ClearLag] Using version-adapter: LatestVersionAdapter
+[07:00:29] [Server thread/INFO]: [ClearLag] Loading modules...
+[07:00:29] [Server thread/WARN]: [ClearLag] Clearlag failed to use the internal TPS tracker during initialization. Reverted to estimation... (Index 3 out of bounds for length 3)
+[07:00:29] [Server thread/INFO]: [ClearLag] Modules enabed, loading config values
+[07:00:29] [Server thread/INFO]: [ClearLag] Modules have been loaded!
+[07:00:29] [Server thread/INFO]: [ClearLag] Clearlag is now enabled!
+[07:00:29] [Server thread/INFO]: [PlayerParticles] Enabling PlayerParticles v8.10
+[07:00:29] [Server thread/INFO]: [PlayerParticles] Data handler connected using SQLite.
+[07:00:29] [Server thread/INFO]: [CoreProtect] Enabling CoreProtect v23.0
+[07:00:29] [Server thread/INFO]: [CoreProtect] CoreProtect Community Edition 已成功启用！ 
+[07:00:29] [Server thread/INFO]: [CoreProtect] Using SQLite for data storage.
+[07:00:29] [Server thread/INFO]: --------------------
+[07:00:29] [Server thread/INFO]: [CoreProtect] 喜欢 CoreProtect？加入我们的 Discord！
+[07:00:29] [Server thread/INFO]: [CoreProtect] Discord: www.coreprotect.net/discord/
+[07:00:29] [Server thread/INFO]: --------------------
+[07:00:29] [Server thread/INFO]: [GSit] Enabling GSit v2.4.3
+[07:00:29] [Server thread/INFO]: [GSit] 插件已成功启用
+[07:00:29] [Server thread/INFO]: [TAB] Enabling TAB v5.0.7
+[07:00:29] [Server thread/INFO]: [TAB] Loaded NMS hook in 52ms
+[07:00:30] [Server thread/INFO]: [TAB] Enabled in 243ms
+[07:00:30] [Server thread/INFO]: [EssentialsAntiBuild] Enabling EssentialsAntiBuild v2.21.2
+[07:00:30] [Server thread/INFO]: [EssentialsAntiBuild] Starting Metrics. Opt-out using the global bStats config.
+[07:00:30] [Server thread/INFO]: [ChestSort] Enabling ChestSort v14.2.0
+[07:00:30] [Server thread/INFO]: [ChestSort] Use permissions: true
+[07:00:30] [Server thread/INFO]: [ChestSort] Current sorting method: {category},{itemsFirst},{name},{color},{customName}
+[07:00:30] [Server thread/INFO]: [ChestSort] Allow automatic chest sorting:true
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Chest sorting enabled by default: false
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Sort time: close
+[07:00:30] [Server thread/INFO]: [ChestSort] Allow automatic inventory sorting:true
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Inventory sorting enabled by default: false
+[07:00:30] [Server thread/INFO]: [ChestSort] Auto generate category files: true
+[07:00:30] [Server thread/INFO]: [ChestSort] Allow hotkeys: true
+[07:00:30] [Server thread/INFO]: [ChestSort] Hotkeys enabled by default:
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Middle-Click: true
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Shift-Click: true
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Double-Click: true
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Shift-Right-Click: true
+[07:00:30] [Server thread/INFO]: [ChestSort] Allow additional hotkeys: true
+[07:00:30] [Server thread/INFO]: [ChestSort] Additional hotkeys enabled by default:
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Left-Click: false
+[07:00:30] [Server thread/INFO]: [ChestSort]   |- Right-Click: false
+[07:00:30] [Server thread/INFO]: [ChestSort] Check for updates: false
+[07:00:30] [Server thread/INFO]: [ChestSort] Categories: 900-weapons (6), 905-common-tools (4), 907-other-tools (6), 909-food (33), 910-valuables (47), 920-armor-and-arrows (9), 930-brewing (18), 950-redstone (23), 960-wood (60), 970-stone (38), 980-plants (50), 981-corals (1)
+[07:00:30] [Server thread/INFO]: [EssentialsGeoIP] Enabling EssentialsGeoIP v2.21.2
+[07:00:30] [Server thread/ERROR]: [EssentialsGeoIP] 找不到许可证密钥！请访问https://essentialsx.net/geoip以了解首次设置说明。
+[07:00:30] [Server thread/ERROR]: [EssentialsGeoIP] GeoIP数据库读取失败！
+java.io.FileNotFoundException: plugins/EssentialsGeoIP/GeoIP2-Country.mmdb (No such file or directory)
+	at java.base/java.io.RandomAccessFile.open0(Native Method) ~[?:?]
+	at java.base/java.io.RandomAccessFile.open(RandomAccessFile.java:356) ~[?:?]
+	at java.base/java.io.RandomAccessFile.<init>(RandomAccessFile.java:273) ~[?:?]
+	at java.base/java.io.RandomAccessFile.<init>(RandomAccessFile.java:223) ~[?:?]
+	at EssentialsXGeoIP-2.21.2.jar/com.earth2me.essentials.geoip.libs.maxmind.db.BufferHolder.<init>(BufferHolder.java:19) ~[EssentialsXGeoIP-2.21.2.jar:?]
+	at EssentialsXGeoIP-2.21.2.jar/com.earth2me.essentials.geoip.libs.maxmind.db.Reader.<init>(Reader.java:116) ~[EssentialsXGeoIP-2.21.2.jar:?]
+	at EssentialsXGeoIP-2.21.2.jar/com.earth2me.essentials.geoip.libs.maxmind.geoip2.DatabaseReader.<init>(DatabaseReader.java:66) ~[EssentialsXGeoIP-2.21.2.jar:?]
+	at EssentialsXGeoIP-2.21.2.jar/com.earth2me.essentials.geoip.libs.maxmind.geoip2.DatabaseReader.<init>(DatabaseReader.java:54) ~[EssentialsXGeoIP-2.21.2.jar:?]
+	at EssentialsXGeoIP-2.21.2.jar/com.earth2me.essentials.geoip.libs.maxmind.geoip2.DatabaseReader$Builder.build(DatabaseReader.java:160) ~[EssentialsXGeoIP-2.21.2.jar:?]
+	at EssentialsXGeoIP-2.21.2.jar/com.earth2me.essentials.geoip.EssentialsGeoIPPlayerListener.reloadConfig(EssentialsGeoIPPlayerListener.java:176) ~[EssentialsXGeoIP-2.21.2.jar:?]
+	at EssentialsXGeoIP-2.21.2.jar/com.earth2me.essentials.geoip.EssentialsGeoIPPlayerListener.<init>(EssentialsGeoIPPlayerListener.java:52) ~[EssentialsXGeoIP-2.21.2.jar:?]
+	at EssentialsXGeoIP-2.21.2.jar/com.earth2me.essentials.geoip.EssentialsGeoIP.onEnable(EssentialsGeoIP.java:34) ~[EssentialsXGeoIP-2.21.2.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:280) ~[paper-api-1.21.8-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:202) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520) ~[paper-api-1.21.8-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:652) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:608) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:743) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:488) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:280) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1164) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:310) ~[paper-1.21.8.jar:1.21.8-60-29c8822]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[07:00:30] [Server thread/INFO]: [EssentialsGeoIP] This product includes GeoLite2 data created by MaxMind, available from http://www.maxmind.com/.
+[07:00:30] [Server thread/INFO]: [EssentialsGeoIP] Starting Metrics. Opt-out using the global bStats config.
+[07:00:30] [Server thread/INFO]: [spark] Starting background profiler...
+[07:00:31] [Server thread/INFO]: Done preparing level "服务器" (5.592s)
+[07:00:31] [Server thread/INFO]: Starting remote control listener
+[07:00:31] [Server thread/INFO]: Thread RCON Listener started
+[07:00:31] [Server thread/INFO]: RCON running on 0.0.0.0:25575
+[07:00:31] [Server thread/INFO]: Running delayed init tasks
+[07:00:31] [Craft Scheduler Thread - 4 - AuthMe/INFO]: [AuthMe] Downloading GEO IP database, because the old database is older than 30 days or doesn't exist
+[07:00:31] [Craft Scheduler Thread - 4 - AuthMe/WARN]: [AuthMe] No MaxMind credentials found in the configuration file! GeoIp protections will be disabled.
+[07:00:31] [Craft Scheduler Thread - 4 - AuthMe/INFO]: [AuthMe] There is no newer GEO IP database uploaded to MaxMind. Using the old one for now.
+[07:00:31] [Craft Scheduler Thread - 1 - Essentials/INFO]: [Essentials] 正在获取版本信息...
+[07:00:31] [Craft Scheduler Thread - 1 - Essentials/INFO]: [Essentials] 更新检查已于配置文件中禁用。
+[07:00:31] [Craft Scheduler Thread - 2 - ViaVersion/INFO]: [ViaVersion] Finished mapping loading, shutting down loader executor.
+[07:00:31] [Craft Scheduler Thread - 4 - AuthMe/WARN]: [AuthMe] Could not download GeoLiteAPI database [FileNotFoundException]: plugins/AuthMe/GeoLite2-Country.mmdb (No such file or directory)
+[07:00:31] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.GriefPreventionFeature] Plugin 'GriefPrevention' found. Using it now.
+[07:00:31] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'GriefPrevention'
+[07:00:31] [Server thread/INFO]: [Essentials] Essentials found a compatible payment resolution method: Vault Compatibility Layer (v1.7.3-b131)!
+[07:00:31] [Server thread/INFO]: [CoreProtect] FastAsyncWorldEdit logging successfully initialized.
+[07:00:31] [Server thread/INFO]: Done (33.289s)! For help, type "help"
+[07:09:02] [User Authenticator #0/INFO]: UUID of player 193158139 is a3eeb709-bb46-3d05-924c-87d5a4cd5dfc
+[07:09:02] [Server thread/INFO]: [HorriblePlayerLoginEventHack] You have plugins listening to the PlayerLoginEvent, this will cause re-configuration APIs to be unavailable: [LuckPerms, AuthMe, Essentials, GriefPrevention, ProtocolLib]
+[07:09:03] [Server thread/INFO]: 193158139 joined the game
+[07:09:03] [Server thread/INFO]: 193158139[IP hidden] logged in with entity id 83 at ([服务器]0.0, 118.0, 0.0)
+[07:09:03] [Craft Scheduler Thread - 41 - Essentials/WARN]: [EssentialsGeoIP] 无法获取193158139的GeoIP数据。请确认你的许可证密钥和配置是正确的。
+[07:09:21] [Server thread/INFO]: 193158139 lost connection: Disconnected
+[07:09:21] [Server thread/INFO]: 193158139 left the game
