@@ -14,15 +14,32 @@ import org.bukkit.inventory.ItemStack;
 
 public class MenuListener implements Listener {
 
+    private boolean isManagedMenuTitle(String title) {
+        if (title == null) {
+            return false;
+        }
+
+        switch (title) {
+            case "§6§l玩家菜单":
+            case "§6§l传送菜单":
+            case "§6§l圈地菜单":
+            case "§6§l交易菜单 §7(以物易物)":
+            case "§6§l社交菜单":
+            case "§6§l工具菜单":
+            case "§6§l服务器信息":
+            case "§6§l个人设置":
+            case "§6§l礼包领取":
+                return true;
+            default:
+                return false;
+        }
+    }
+
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
         // 检查是否是我们的菜单
         String title = event.getView().getTitle();
-        if (title == null) {
-            return;
-        }
-
-        if (!title.startsWith("§6§l") && !title.startsWith("§3§l")) {
+        if (!isManagedMenuTitle(title)) {
             return;
         }
 
@@ -46,7 +63,7 @@ public class MenuListener implements Listener {
             case "§6§l圈地菜单":
                 handleClaimMenuClick(player, clickedItem);
                 break;
-            case "§6§l经济菜单":
+            case "§6§l交易菜单 §7(以物易物)":
                 handleEconomyMenuClick(player, clickedItem);
                 break;
             case "§6§l社交菜单":
@@ -425,7 +442,7 @@ public class MenuListener implements Listener {
 
             // 如果是在菜单GUI中点击，取消事件
             String title = event.getView().getTitle();
-            if (title.startsWith("§6§l")) {
+            if (isManagedMenuTitle(title)) {
                 event.setCancelled(true);
             }
         }

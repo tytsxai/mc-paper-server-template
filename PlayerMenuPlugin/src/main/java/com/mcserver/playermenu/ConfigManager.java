@@ -94,6 +94,20 @@ public class ConfigManager {
     }
 
     /**
+     * 检查是否已经为玩家保存过菜单偏好
+     */
+    public static boolean hasPlayerSetting(UUID playerUUID) {
+        return config.contains("players." + playerUUID.toString() + ".menu-item-enabled");
+    }
+
+    /**
+     * 检查是否已经为玩家保存过菜单偏好（通过Player对象）
+     */
+    public static boolean hasPlayerSetting(Player player) {
+        return hasPlayerSetting(player.getUniqueId());
+    }
+
+    /**
      * 设置玩家的菜单物品启用状态（通过Player对象）
      */
     public static void setMenuItemEnabled(Player player, boolean enabled) {

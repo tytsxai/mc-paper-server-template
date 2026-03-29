@@ -1,9 +1,11 @@
 package com.mcserver.playermenu;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -20,6 +22,8 @@ public class MenuItemManager {
 
     // 菜单物品的固定槽位（默认第9格，即最右边）
     private static final int MENU_ITEM_SLOT = 8;
+    private static final NamespacedKey MENU_ITEM_KEY =
+        new NamespacedKey(PlayerMenuPlugin.getInstance(), "menu_item");
 
     /**
      * 创建菜单物品
@@ -40,6 +44,7 @@ public class MenuItemManager {
 
         // 设置为不可破坏、不可掉落的特殊物品
         meta.setUnbreakable(true);
+        meta.getPersistentDataContainer().set(MENU_ITEM_KEY, PersistentDataType.BYTE, (byte) 1);
 
         item.setItemMeta(meta);
         return item;
@@ -58,9 +63,8 @@ public class MenuItemManager {
         }
 
         ItemMeta meta = item.getItemMeta();
-        String displayName = meta.getDisplayName();
-
-        return displayName != null && displayName.contains("打开菜单");
+        Byte marker = meta.getPersistentDataContainer().get(MENU_ITEM_KEY, PersistentDataType.BYTE);
+        return marker != null && marker == (byte) 1;
     }
 
     /**
@@ -84,13 +88,19 @@ public class MenuItemManager {
                 player.sendMessage("§a菜单物品已放入快捷栏第" + (emptySlot + 1) + "格");
                 return;
             } else {
-                // 强制放在第9格（可能会替换现有物品）
+                // 强制放在第9格前，先处理原物品，避免静默丢失
+                ItemStack displacedItem = currentItem.clone();
+                int backpackSlot = findBackpackEmptySlot(player);
+                if (backpackSlot != -1) {
+                    player.getInventory().setItem(backpackSlot, displacedItem);
+                    player.sendMessage("§7原物品已移入背包");
+                } else {
+                    player.getWorld().dropItemNaturally(player.getLocation(), displacedItem);
+                    player.sendMessage("§e背包已满，原物品已掉落在你脚下");
+                }
+
                 player.getInventory().setItem(MENU_ITEM_SLOT, createMenuItem());
                 player.sendMessage("§a菜单物品已放入快捷栏第9格");
-                if (currentItem != null) {
-                    player.sendMessage("§7原物品已移入背包");
-                    player.getInventory().addItem(currentItem);
-                }
             }
         } else {
             // 直接放在第9格
@@ -157,9 +167,13 @@ public class MenuItemManager {
      */
     public static void onPlayerJoin(Player player) {
         // 从配置文件读取玩家的偏好
+        boolean firstJoinWithDefault = !ConfigManager.hasPlayerSetting(player);
         boolean enabled = ConfigManager.isMenuItemEnabled(player);
 
         if (enabled) {
+            if (firstJoinWithDefault) {
+                ConfigManager.setMenuItemEnabled(player, true);
+            }
             enabledPlayers.add(player.getUniqueId());
 
             // 延迟1秒给予，避免与其他插件冲突
@@ -168,7 +182,7 @@ public class MenuItemManager {
                 () -> {
                     giveMenuItem(player);
                     // 首次加入时提示
-                    if (!ConfigManager.getConfig().contains("players." + player.getUniqueId().toString())) {
+                    if (firstJoinWithDefault) {
                         player.sendMessage("§a§l[菜单系统] §7欢迎使用！");
                         player.sendMessage("§7你的快捷栏中有一个 §e下界之星");
                         player.sendMessage("§7右键点击即可打开菜单");
@@ -201,5 +215,15 @@ public class MenuItemManager {
         if (!hasMenuItem) {
             giveMenuItem(player);
         }
+    }
+
+    private static int findBackpackEmptySlot(Player player) {
+        for (int i = 9; i < player.getInventory().getSize(); i++) {
+            ItemStack item = player.getInventory().getItem(i);
+            if (item == null || item.getType() == Material.AIR) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
