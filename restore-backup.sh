@@ -9,6 +9,12 @@ PID_FILE="${PID_FILE:-$SERVER_DIR/server.pid}"
 JAR_NAME="${JAR_NAME:-paper-1.21.8-60.jar}"
 PROCESS_MATCH="java.*${JAR_NAME//./\\.}"
 
+is_matching_server_pid() {
+    local pid="$1"
+    [ -n "$pid" ] || return 1
+    ps -p "$pid" -o command= 2>/dev/null | grep -Eq "$PROCESS_MATCH"
+}
+
 resolve_realpath() {
     python3 - "$1" <<'PY'
 import os, sys
@@ -29,9 +35,13 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
-if [ -f "$PID_FILE" ] && ps -p "$(cat "$PID_FILE")" >/dev/null 2>&1; then
-    echo "错误：检测到服务器正在运行，请先停止服务器后再恢复备份" >&2
-    exit 1
+if [ -f "$PID_FILE" ]; then
+    pid_in_file="$(cat "$PID_FILE" 2>/dev/null || true)"
+    if is_matching_server_pid "$pid_in_file"; then
+        echo "错误：检测到服务器正在运行，请先停止服务器后再恢复备份" >&2
+        exit 1
+    fi
+    rm -f "$PID_FILE"
 fi
 
 if pgrep -f "$PROCESS_MATCH" >/dev/null 2>&1; then
@@ -59,6 +69,11 @@ fi
 
 if [[ "$BACKUP_PATH" != *.tar.gz ]]; then
     echo "错误：备份文件必须以 .tar.gz 结尾" >&2
+    exit 1
+fi
+
+if tar -tzf "$BACKUP_PATH" | grep -Eq '(^/|(^|/)\.\.(/|$))'; then
+    echo "错误：备份文件包含不安全的路径，已拒绝恢复" >&2
     exit 1
 fi
 

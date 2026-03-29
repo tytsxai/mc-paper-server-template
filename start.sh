@@ -14,6 +14,12 @@ PID_FILE="${PID_FILE:-$DIR/server.pid}"
 PROCESS_MATCH="java.*${JAR_NAME//./\\.}"
 SERVER_PROPERTIES="${SERVER_PROPERTIES:-$DIR/server.properties}"
 
+is_matching_server_pid() {
+    local pid="$1"
+    [ -n "$pid" ] || return 1
+    ps -p "$pid" -o command= 2>/dev/null | grep -Eq "$PROCESS_MATCH"
+}
+
 read_server_prop() {
     local key="$1"
     if [ -f "$SERVER_PROPERTIES" ]; then
@@ -44,11 +50,11 @@ fi
 
 if [ -f "$PID_FILE" ]; then
     PID_CONTENT=$(cat "$PID_FILE")
-    if [ -n "$PID_CONTENT" ] && ps -p "$PID_CONTENT" >/dev/null 2>&1; then
+    if is_matching_server_pid "$PID_CONTENT"; then
         echo "错误：Minecraft 服务器已经在运行 (PID: $PID_CONTENT)"
-        echo "如果这是旧的 PID，请删除 $PID_FILE 后重试"
         exit 1
     fi
+    rm -f "$PID_FILE"
 fi
 
 if pgrep -f "$PROCESS_MATCH" >/dev/null 2>&1; then

@@ -17,14 +17,21 @@ WAIT_SECONDS="${WAIT_SECONDS:-75}"
 RCON_SENDER="$DIR/send-command.sh"
 PROCESS_MATCH="java.*${JAR_NAME//./\\.}"
 
+is_matching_server_pid() {
+    local pid="$1"
+    [ -n "$pid" ] || return 1
+    ps -p "$pid" -o command= 2>/dev/null | grep -Eq "$PROCESS_MATCH"
+}
+
 find_pid() {
     if [ -f "$PID_FILE" ]; then
         local stored_pid
         stored_pid=$(cat "$PID_FILE")
-        if [ -n "$stored_pid" ] && ps -p "$stored_pid" >/dev/null 2>&1; then
+        if is_matching_server_pid "$stored_pid"; then
             echo "$stored_pid"
             return
         fi
+        rm -f "$PID_FILE"
     fi
     pgrep -f "$PROCESS_MATCH" | head -n 1
 }

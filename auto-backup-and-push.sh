@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 # Minecraft 服务器自动备份和 GitHub 推送脚本
 # 作者: AI Assistant
@@ -13,8 +15,35 @@ MAX_BACKUPS=7  # 保留最近7个本地备份
 MAX_LOG_LINES=1000  # 日志文件最大行数
 PID_FILE="${PID_FILE:-$SERVER_DIR/server.pid}"
 SEND_COMMAND_SCRIPT="${SEND_COMMAND_SCRIPT:-$SERVER_DIR/send-command.sh}"
+JAR_NAME="${JAR_NAME:-paper-1.21.8-60.jar}"
+PROCESS_MATCH="java.*${JAR_NAME//./\\.}"
 SERVER_RUNNING=false
 AUTOSAVE_DISABLED=false
+
+is_matching_server_pid() {
+    local pid="$1"
+    [ -n "$pid" ] || return 1
+    ps -p "$pid" -o command= 2>/dev/null | grep -Eq "$PROCESS_MATCH"
+}
+
+run_and_log() {
+    local tmp_file
+    local status
+
+    tmp_file=$(mktemp)
+    if "$@" >"$tmp_file" 2>&1; then
+        status=0
+    else
+        status=$?
+    fi
+
+    while IFS= read -r line; do
+        [ -n "$line" ] && log "  $line"
+    done < "$tmp_file"
+    rm -f "$tmp_file"
+
+    return "$status"
+}
 
 # ===== 日志函数 =====
 log() {
@@ -41,11 +70,33 @@ is_server_running() {
     if [ -f "$PID_FILE" ]; then
         local pid
         pid=$(cat "$PID_FILE" 2>/dev/null || true)
-        if [ -n "$pid" ] && ps -p "$pid" >/dev/null 2>&1; then
+        if is_matching_server_pid "$pid"; then
             return 0
         fi
+        rm -f "$PID_FILE"
     fi
-    pgrep -f "java.*paper-1.21.8-60.jar" >/dev/null 2>&1
+    pgrep -f "$PROCESS_MATCH" >/dev/null 2>&1
+}
+
+build_tar_excludes() {
+    local server_real backup_real rel_path
+    server_real=$(python3 -c 'import os,sys; print(os.path.realpath(sys.argv[1]))' "$SERVER_DIR")
+    backup_real=$(python3 -c 'import os,sys; print(os.path.realpath(sys.argv[1]))' "$BACKUP_DIR")
+
+    TAR_EXCLUDES=(
+        --exclude='*.log'
+        --exclude='logs/*'
+        --exclude='cache/*'
+        --exclude='.git/*'
+        --exclude='*.jar.old'
+        --exclude='backup-push.log'
+        --exclude='server.pid'
+    )
+
+    if [[ "$backup_real" == "$server_real"/* ]]; then
+        rel_path="${backup_real#$server_real/}"
+        TAR_EXCLUDES+=("--exclude=./$rel_path" "--exclude=./$rel_path/*")
+    fi
 }
 
 send_server_command() {
@@ -79,6 +130,7 @@ log "========== 开始备份流程 =========="
 
 # 1. 创建备份目录
 mkdir -p "$BACKUP_DIR" || error_exit "无法创建备份目录"
+build_tar_excludes
 
 # 2. 生成备份文件名
 BACKUP_NAME="minecraft-backup-$(date '+%Y%m%d-%H%M%S').tar.gz"
@@ -110,14 +162,7 @@ log "开始创建本地备份: $BACKUP_NAME"
 cd "$SERVER_DIR" || error_exit "无法进入服务器目录"
 
 # 排除一些不需要备份的文件
-if tar -czf "$BACKUP_PATH" \
-    --exclude='*.log' \
-    --exclude='logs/*' \
-    --exclude='cache/*' \
-    --exclude='.git/*' \
-    --exclude='*.jar.old' \
-    --exclude='backup-push.log' \
-    .; then
+if tar -czf "$BACKUP_PATH" "${TAR_EXCLUDES[@]}" .; then
     BACKUP_SIZE=$(du -h "$BACKUP_PATH" | cut -f1)
     log "本地备份创建成功: $BACKUP_PATH (大小: $BACKUP_SIZE)"
 else
@@ -154,7 +199,7 @@ fi
 
 # 添加所有更改
 log "添加文件到 git..."
-git add . 2>&1 | while read line; do log "  $line"; done
+run_and_log git add .
 
 # 检查是否有更改
 if git diff --cached --quiet; then
@@ -163,9 +208,7 @@ else
     # 提交更改
     COMMIT_MSG="自动备份 - $(date '+%Y-%m-%d %H:%M:%S')"
     log "提交更改: $COMMIT_MSG"
-    git commit -m "$COMMIT_MSG" 2>&1 | while read line; do log "  $line"; done
-    
-    if [ $? -eq 0 ]; then
+    if run_and_log git commit -m "$COMMIT_MSG"; then
         log "提交成功"
     else
         error_exit "Git 提交失败"
@@ -173,9 +216,7 @@ else
     
     # 推送到 GitHub
     log "推送到 GitHub 远程仓库..."
-    git push origin main 2>&1 | while read line; do log "  $line"; done
-    
-    if [ $? -eq 0 ]; then
+    if run_and_log git push origin main; then
         log "GitHub 推送成功！"
         if [ "$SERVER_RUNNING" = true ]; then
             send_server_command "say §a[备份] GitHub 云端备份完成！" || true

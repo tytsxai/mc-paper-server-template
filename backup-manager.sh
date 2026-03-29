@@ -303,9 +303,10 @@ test_ssh() {
     echo -e "${BLUE}测试 GitHub SSH 连接...${NC}"
     echo ""
     ssh -T git@github.com 2>&1
+    local ssh_status=$?
     echo ""
     
-    if [ $? -eq 1 ]; then
+    if [ "$ssh_status" -eq 1 ]; then
         echo -e "${GREEN}SSH 连接正常！${NC}"
     else
         echo -e "${RED}SSH 连接失败！${NC}"
