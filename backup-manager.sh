@@ -2,9 +2,10 @@
 
 # Minecraft 服务器备份管理工具
 
-BACKUP_DIR="/root/minecraft-backups"
-SERVER_DIR="/root/minecraft-server"
-LOG_FILE="$SERVER_DIR/backup-push.log"
+DIR="$(cd "$(dirname "$0")" && pwd)"
+SERVER_DIR="${SERVER_DIR:-$DIR}"
+BACKUP_DIR="${BACKUP_DIR:-$SERVER_DIR/backups}"
+LOG_FILE="${LOG_FILE:-$SERVER_DIR/backup-push.log}"
 
 # 颜色定义
 RED='\033[0;31m'
@@ -344,4 +345,3 @@ while true; do
             ;;
     esac
 done
-

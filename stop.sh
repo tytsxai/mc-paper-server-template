@@ -31,7 +31,12 @@ find_pid() {
 
 pid=$(find_pid || true)
 if [ -z "${pid:-}" ]; then
-    echo "Minecraft 服务器未运行"
+    if [ -f "$PID_FILE" ]; then
+        rm -f "$PID_FILE"
+        echo "未检测到运行中的服务器，已清理旧 PID 文件"
+    else
+        echo "Minecraft 服务器未运行"
+    fi
     exit 0
 fi
 

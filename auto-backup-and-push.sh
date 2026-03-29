@@ -5,11 +5,16 @@
 # 日期: 2025-10-06
 
 # ===== 配置部分 =====
-SERVER_DIR="/root/minecraft-server"
-BACKUP_DIR="/root/minecraft-backups"
-LOG_FILE="$SERVER_DIR/backup-push.log"
+DIR="$(cd "$(dirname "$0")" && pwd)"
+SERVER_DIR="${SERVER_DIR:-$DIR}"
+BACKUP_DIR="${BACKUP_DIR:-$SERVER_DIR/backups}"
+LOG_FILE="${LOG_FILE:-$SERVER_DIR/backup-push.log}"
 MAX_BACKUPS=7  # 保留最近7个本地备份
 MAX_LOG_LINES=1000  # 日志文件最大行数
+PID_FILE="${PID_FILE:-$SERVER_DIR/server.pid}"
+SEND_COMMAND_SCRIPT="${SEND_COMMAND_SCRIPT:-$SERVER_DIR/send-command.sh}"
+SERVER_RUNNING=false
+AUTOSAVE_DISABLED=false
 
 # ===== 日志函数 =====
 log() {
@@ -27,8 +32,46 @@ log() {
 
 # ===== 错误处理 =====
 error_exit() {
+    restore_autosave_if_needed
     log "错误: $1"
     exit 1
+}
+
+is_server_running() {
+    if [ -f "$PID_FILE" ]; then
+        local pid
+        pid=$(cat "$PID_FILE" 2>/dev/null || true)
+        if [ -n "$pid" ] && ps -p "$pid" >/dev/null 2>&1; then
+            return 0
+        fi
+    fi
+    pgrep -f "java.*paper-1.21.8-60.jar" >/dev/null 2>&1
+}
+
+send_server_command() {
+    local command="$1"
+    if [ -x "$SEND_COMMAND_SCRIPT" ] && "$SEND_COMMAND_SCRIPT" "$command" >/dev/null 2>&1; then
+        return 0
+    fi
+    if command -v screen >/dev/null 2>&1; then
+        local screen_name="minecraft"
+        if screen -list | grep -q "$screen_name"; then
+            screen -S "$screen_name" -p 0 -X stuff "$command$(printf \\r)"
+            return 0
+        fi
+    fi
+    return 1
+}
+
+restore_autosave_if_needed() {
+    if [ "$SERVER_RUNNING" = true ] && [ "$AUTOSAVE_DISABLED" = true ]; then
+        if send_server_command "save-on"; then
+            AUTOSAVE_DISABLED=false
+            log "已恢复服务器自动保存"
+        else
+            log "警告: 恢复自动保存失败，请手动执行 save-on"
+        fi
+    fi
 }
 
 # ===== 开始备份流程 =====
@@ -42,25 +85,24 @@ BACKUP_NAME="minecraft-backup-$(date '+%Y%m%d-%H%M%S').tar.gz"
 BACKUP_PATH="$BACKUP_DIR/$BACKUP_NAME"
 
 # 3. 检查服务器是否正在运行
-SCREEN_NAME="minecraft"
-if screen -list | grep -q "$SCREEN_NAME"; then
+if is_server_running; then
     log "检测到服务器正在运行，发送保存命令..."
-    
-    # 关闭自动保存
-    screen -S "$SCREEN_NAME" -p 0 -X stuff "save-off$(printf \\r)"
+
+    if ! send_server_command "save-off"; then
+        error_exit "无法发送 save-off 命令，请检查 RCON 或 screen 配置"
+    fi
+    AUTOSAVE_DISABLED=true
     sleep 2
-    
-    # 强制保存世界
-    screen -S "$SCREEN_NAME" -p 0 -X stuff "save-all$(printf \\r)"
+
+    if ! send_server_command "save-all"; then
+        error_exit "无法发送 save-all 命令，请检查 RCON 或 screen 配置"
+    fi
     sleep 5
-    
-    # 通知玩家
-    screen -S "$SCREEN_NAME" -p 0 -X stuff "say §e[备份] 正在进行自动备份，可能会有短暂卡顿...$(printf \\r)"
-    
+
+    send_server_command "say §e[备份] 正在进行自动备份，可能会有短暂卡顿..." || true
     SERVER_RUNNING=true
 else
     log "服务器未运行，直接备份..."
-    SERVER_RUNNING=false
 fi
 
 # 4. 创建本地备份（压缩）
@@ -68,20 +110,14 @@ log "开始创建本地备份: $BACKUP_NAME"
 cd "$SERVER_DIR" || error_exit "无法进入服务器目录"
 
 # 排除一些不需要备份的文件
-tar -czf "$BACKUP_PATH" \
+if tar -czf "$BACKUP_PATH" \
     --exclude='*.log' \
     --exclude='logs/*' \
     --exclude='cache/*' \
     --exclude='.git/*' \
     --exclude='*.jar.old' \
     --exclude='backup-push.log' \
-    . 2>&1 | grep -v "Removing leading" | while read line; do
-        if [ ! -z "$line" ]; then
-            log "  $line"
-        fi
-    done
-
-if [ $? -eq 0 ]; then
+    .; then
     BACKUP_SIZE=$(du -h "$BACKUP_PATH" | cut -f1)
     log "本地备份创建成功: $BACKUP_PATH (大小: $BACKUP_SIZE)"
 else
@@ -90,9 +126,8 @@ fi
 
 # 5. 恢复服务器自动保存
 if [ "$SERVER_RUNNING" = true ]; then
-    screen -S "$SCREEN_NAME" -p 0 -X stuff "save-on$(printf \\r)"
-    screen -S "$SCREEN_NAME" -p 0 -X stuff "say §a[备份] 本地备份完成！$(printf \\r)"
-    log "已恢复服务器自动保存"
+    restore_autosave_if_needed
+    send_server_command "say §a[备份] 本地备份完成！" || true
 fi
 
 # 6. 清理旧的本地备份
@@ -143,12 +178,12 @@ else
     if [ $? -eq 0 ]; then
         log "GitHub 推送成功！"
         if [ "$SERVER_RUNNING" = true ]; then
-            screen -S "$SCREEN_NAME" -p 0 -X stuff "say §a[备份] GitHub 云端备份完成！$(printf \\r)"
+            send_server_command "say §a[备份] GitHub 云端备份完成！" || true
         fi
     else
         log "警告: GitHub 推送失败，但本地备份已完成"
         if [ "$SERVER_RUNNING" = true ]; then
-            screen -S "$SCREEN_NAME" -p 0 -X stuff "say §e[备份] 本地备份完成，但云端同步失败$(printf \\r)"
+            send_server_command "say §e[备份] 本地备份完成，但云端同步失败" || true
         fi
     fi
 fi
@@ -168,4 +203,3 @@ fi
 
 log "========== 备份流程完成 =========="
 echo ""
-
