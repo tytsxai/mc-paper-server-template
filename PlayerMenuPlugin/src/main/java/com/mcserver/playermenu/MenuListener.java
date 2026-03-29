@@ -18,6 +18,9 @@ public class MenuListener implements Listener {
     public void onInventoryClick(InventoryClickEvent event) {
         // 检查是否是我们的菜单
         String title = event.getView().getTitle();
+        if (title == null) {
+            return;
+        }
 
         if (!title.startsWith("§6§l") && !title.startsWith("§3§l")) {
             return;

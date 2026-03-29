@@ -508,7 +508,7 @@ public class MenuManager {
             "§7点击执行: §f/mail clear",
             "§8清空所有已读邮件"
         );
-        menu.setItem(13, chestSort);
+        menu.setItem(13, clearMail);
 
         // 查看已忽略玩家
         ItemStack ignoredList = createMenuItem(
