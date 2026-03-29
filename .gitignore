@@ -2,6 +2,18 @@
 # 排除不需要上传到 Git 的文件
 
 # ============================================
+# 本地运行密钥与实例配置
+# ============================================
+server.properties
+server.pid
+backup-push.log
+.wget-hsts
+banned-*.json
+ops.json
+usercache.json
+whitelist.json
+
+# ============================================
 # 世界地图文件（不上传）
 # ============================================
 world/
@@ -36,6 +48,9 @@ cache/
 # ============================================
 version_history.json
 paper-*.jar.old
+paper-*.jar
+versions/
+libraries/
 
 # ============================================
 # 备份文件
@@ -64,6 +79,7 @@ logs/*.log
 logs/*.log.gz
 server.log
 server_output.log
+*.log
 
 # ============================================
 # 性能分析文件
@@ -74,6 +90,27 @@ timings-*.txt
 # ============================================
 # 大型数据库文件（根据需要可以排除）
 # ============================================
-# plugins/CoreProtect/database.db
-# plugins/AuthMe/authme.db
-# plugins/LuckPerms/luckperms-h2-v2.mv.db
+*.db
+*.mv.db
+*.bin
+
+# ============================================
+# 插件运行时资产与二进制
+# ============================================
+plugins/*.jar
+plugins/*.jar.offline
+plugins/.paper-remapped/
+plugins/**/userdata/
+plugins/**/data/
+plugins/**/Logs/
+plugins/**/libs/
+plugins/GriefPreventionData/
+plugins/Essentials/usermap.bin
+plugins/Essentials/uuids.bin
+
+# ============================================
+# 本地世界数据
+# ============================================
+服务器/
+服务器_nether/
+服务器_the_end/

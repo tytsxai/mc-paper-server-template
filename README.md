@@ -1,243 +1,126 @@
-# 🎮 Minecraft Java 服务器
+# Minecraft Paper Server Template
 
-一个功能完整的 Minecraft 1.21.8 Paper 服务器，配置了多种实用插件和完善的玩家欢迎系统。
+一个面向 `Minecraft Java 1.21.8` 的 `Paper` 服务器仓库模板，保留了可复用的脚本、配置和自定义插件源码，同时移除了不适合公开分发的运行时资产与敏感信息。
 
-## 📋 服务器信息
+这个仓库现在定位为：
 
-- **版本**: Minecraft 1.21.8 (Paper)
-- **服务器核心**: Paper 1.21.8-60
-- **RCON**: 已启用（端口 20502，建议自定义强密码）
-- **QQ 群**: 539136479
+- 服务器配置模板
+- 运维脚本集合
+- `PlayerMenuPlugin` 自定义插件源码
+- 可公开协作的基础文档
 
-## ✨ 主要功能
+这个仓库现在不包含：
 
-### 🔐 安全系统
-- **正版登录** - 使用官方账号登录，无需额外注册插件
+- Paper 服务端二进制
+- 第三方插件二进制
+- 世界存档
+- 玩家数据、数据库、日志
+- 本机 `server.properties` 和任何明文口令
 
-### 🛡️ 保护系统
-- **GriefPrevention** - 领地保护系统，防止恶意破坏
-- **CoreProtect** - 方块记录与回滚系统
+## Repository Layout
 
-### 🎁 玩家系统
-- **完善的欢迎系统** - 玩家加入时自动显示欢迎消息
-- **新手礼包系统** - 两种礼包（新手、工具）
-- **传送系统** - 设置家、回家、传送等功能
+- `PlayerMenuPlugin/`: 自定义玩家菜单插件源码
+- `config/`: Paper 全局与世界默认配置
+- `plugins/`: 保留可公开的插件配置与文本资源
+- `start.sh` `stop.sh` `stop-graceful.sh`: 启停脚本
+- `auto-backup-and-push.sh` `restore-backup.sh`: 备份与恢复脚本
+- `send-command.sh` `scripts/rcon-send.py`: RCON 命令发送工具
 
-### 🌍 世界管理
-- **FastAsyncWorldEdit** - 强大的世界编辑/刷地工具
+## Quick Start
 
-### 💰 经济系统
-- **Vault** - 经济系统核心
-- **EssentialsX** - 完整的服务器管理工具
+### 1. Requirements
 
-## 📦 已安装插件列表
+- Java 21+
+- Linux 或 macOS
+- Git
+- 可选：`gh`、`screen`、`python3`
 
-| 插件名称 | 版本 | 功能说明 |
-|---------|------|---------|
-| EssentialsX | 2.21.2 | 服务器管理核心、基础命令 |
-| EssentialsXChat | 2.21.2 | 聊天管理 |
-| EssentialsXSpawn | 2.21.2 | 出生点管理 |
-| GriefPrevention | 16.18.4 | 领地保护 |
-| CoreProtect | 23.0 | 方块记录与回滚 |
-| LuckPerms | 5.5.15 | 权限管理 |
-| FastAsyncWorldEdit | 2.13.3 | 世界编辑/刷地 |
-| ChestSort | 14.2.0 | 箱子自动整理 |
-| GSit | 2.4.3 | 坐下/躺下/动作 |
-| PlayerMenu | 1.0 | 玩家功能菜单 |
-| TAB | 5.0.7 | Tab 列表与头衔显示 |
-| ViaVersion | 5.5.0 | 支持高版本客户端进服 |
-| ViaBackwards | 5.5.0 | 支持低版本客户端进服 |
-| Vault | - | 经济/权限桥接 |
-| WorldBorder | - | 世界边界支持（当前未启用限制） |
-| ProtocolLib | - | 协议支持库 |
+### 2. Prepare Runtime Files
 
-## 🎁 礼包系统
+你需要自行准备以下运行时文件：
 
-### 新手礼包 (`/kit welcome`)
-- **冷却时间**: 一次性
-- **内容**: 
-  - 木制基础工具（木剑、木镐、木斧、木铲）
-  - 食物：面包 16 个、牛排 8 个
-  - 火把 32 个
+- `paper-1.21.8-60.jar` 或兼容版本
+- 所需第三方插件 `.jar`
+- 本地 `server.properties`
 
-### 工具礼包 (`/kit tools`)
-- **冷却时间**: 10 秒
-- **内容**:
-  - 木剑、木镐、木斧、木铲（补充基础工具）
-
-## 🚀 快速开始
-
-### 1. 环境要求
-- Java 21 或更高版本
-- Linux 系统（推荐）
-- 默认内存参数为 -Xms4G / -Xmx10G，可按机器配置设置 `JAVA_OPTS`
-
-### 2. 启动服务器
+可以从模板创建本地配置：
 
 ```bash
-# 启动服务器
+cp server.properties.example server.properties
+```
+
+然后至少修改：
+
+- `server-port`
+- `rcon.port`
+- `rcon.password`
+- `management-server-secret`
+- 任何与你部署环境相关的地址、密钥和端口
+
+### 3. Run
+
+```bash
 ./start.sh
-
-# 平滑停止（优先）
 ./stop-graceful.sh
-
-# 强制停止
 ./stop.sh
-
-# 重新启动服务器（应用配置更改）
-# 可手动先 ./stop-graceful.sh 再 ./start.sh
 ```
 
-### 3. 首次配置
+## Security Notes
 
-1. 确保已接受 EULA（`eula.txt` 中设置 `eula=true`）
-2. 修改 `server.properties` 中的服务器设置
-3. 配置插件设置（在 `plugins/` 目录下）
-4. 启动服务器
+这个仓库默认把敏感运行时文件排除在版本控制之外，但你仍然需要自己负责：
 
-## 📝 常用命令
+- 使用高强度 `rcon.password`
+- 不要把真实 `server.properties` 提交回仓库
+- 用防火墙限制 RCON 端口
+- 不要把数据库、日志、玩家数据和世界存档推到公开仓库
 
-### 玩家命令
-```
-/motd - 查看欢迎消息
-/rules - 查看服务器规则
-/kit welcome - 领取新手礼包（一次性）
-/kit tools - 工具礼包（冷却 10 秒）
-/spawn - 回到出生点
-/sethome [名称] - 设置家
-/home [名称] - 回家
-/tpa <玩家名> - 请求传送到玩家
-/tpaccept - 接受传送请求
+## PlayerMenuPlugin
+
+插件源码位于 `PlayerMenuPlugin/`，使用 Maven 构建：
+
+```bash
+mvn -q -f PlayerMenuPlugin/pom.xml test
+mvn -q -f PlayerMenuPlugin/pom.xml package
 ```
 
-### 管理员命令
-```
-/op <玩家名> - 给予玩家管理员权限
-/deop <玩家名> - 移除玩家管理员权限
-/setspawn - 设置出生点
-/setspawn newbies - 设置新手出生点
-/co inspect - 启用方块检查模式
-/co rollback - 回滚操作
-```
+插件功能包括：
 
-## 🎨 玩家欢迎系统
+- 玩家菜单 GUI
+- 常用命令快捷入口
+- 快捷栏菜单物品
+- 基础配置持久化
 
-### 主动提示功能
+## Backup and Restore
 
-1. **玩家加入时立即显示欢迎消息**
-   - 无延迟自动显示
-   - 包含服务器信息、插件功能、命令列表
-   - 显示 QQ 群号和社区信息
+### Backup
 
-2. **新玩家首次加入全服广播**
-   - 全服玩家看到欢迎新人的消息
-   - 提示新玩家领取新手礼包
-   - 显示 QQ 群号
-
-3. **玩家加入/离开消息**
-   - 显示玩家加入服务器的消息
-   - 显示当前在线人数
-   - 显示玩家离开服务器的消息
-
-### 配置文件位置
-
-- **欢迎消息**: `plugins/Essentials/motd.txt`
-- **服务器规则**: `plugins/Essentials/rules.txt`
-- **礼包配置**: `plugins/Essentials/kits.yml`
-- **主配置**: `plugins/Essentials/config.yml`
-
-## 🔧 配置说明
-
-### 服务器配置
-- `server.properties` - 服务器基本配置
-- `bukkit.yml` - Bukkit 配置
-- `spigot.yml` - Spigot 配置
-- `config/paper-global.yml` - Paper 全局配置
-
-### 插件配置
-所有插件配置文件位于 `plugins/<插件名>/` 目录下。
-
-### 重要配置项
-
-#### Essentials 配置 (`plugins/Essentials/config.yml`)
-```yaml
-# 玩家加入时立即显示欢迎消息（无延迟）
-delay-motd: 0
-
-# 自定义加入消息
-custom-join-message: "&e&l[+] &a{PLAYER} &7加入了服务器 &8[&b在线: {ONLINE}&8]"
-
-# 自定义离开消息
-custom-quit-message: "&c&l[-] &7{PLAYER} &7离开了服务器"
-
-# 新玩家首次加入广播
-newbies:
-  announce-format: '&6&l✦✦✦ &d欢迎新玩家 &b{DISPLAYNAME} &d首次加入服务器！&6&l✦✦✦\n&a&l快使用 &f/kit welcome &a&l领取新手礼包！ &7| &3QQ群: &f539136479'
-  spawnpoint: newbies
+```bash
+./auto-backup-and-push.sh
 ```
 
-## 📊 服务器管理
+### Restore
 
-### 备份
-建议定期备份以下内容：
-- 世界数据 (`world/`, `world_nether/`, `world_the_end/`)
-- 插件配置 (`plugins/*/config.yml`)
-- 玩家数据 (`plugins/*/playerdata/`)
+```bash
+./restore-backup.sh <backup-file.tar.gz>
+```
 
-### 性能优化
-- 已配置 Paper 服务器核心，性能优于 Spigot
-- 可在 `config/paper-global.yml` 中调整性能参数
-- 建议定期清理日志文件
+说明：
 
-### 安全建议
-- 定期更新服务器核心和插件
-- 使用白名单模式（如需要）
-- 配置防火墙规则
-- 定期检查 CoreProtect 日志
+- 恢复前必须先停服
+- 恢复脚本会拒绝包含危险路径的压缩包
+- 公开仓库中不再跟踪 `backups/`
 
-## 🐛 故障排除
+## Open Source Scope
 
-### 服务器无法启动
-1. 检查 Java 版本是否为 21+
-2. 检查 `eula.txt` 是否设置为 `true`
-3. 查看 `logs/latest.log` 获取错误信息
+这个仓库公开的是“服务器工程模板与自定义代码”，不是某台线上服务器的完整运行镜像。
 
-### 插件无法加载
-1. 检查插件版本是否与服务器版本兼容
-2. 查看 `logs/latest.log` 中的插件加载信息
-3. 确保插件依赖已安装（如 Vault、ProtocolLib）
+如果你要继续公开维护，建议遵守这条边界：
 
-### 玩家无法加入
-1. 检查服务器端口是否开放（当前为 20501）
-2. 检查白名单设置
-3. 确认玩家使用正版账号登录
+- 公开：源码、脚本、模板配置、文档
+- 私有：密钥、实例配置、世界数据、玩家数据、第三方二进制资产
 
-## 📞 联系方式
+## License
 
-- **QQ 群**: 539136479
-- **GitHub**: https://github.com/tytsxai/mc-java-fuwuqi
+本仓库中的自定义脚本、文档和 `PlayerMenuPlugin` 源码使用 MIT 许可证。
 
-## 📄 许可证
-
-本项目仅供学习和个人使用。所有插件遵循其各自的许可证。
-
-## 🙏 致谢
-
-感谢以下开源项目：
-- [Paper](https://papermc.io/) - 高性能 Minecraft 服务器
-- [EssentialsX](https://essentialsx.net/) - 服务器管理工具
-- [GriefPrevention](https://github.com/TechFortress/GriefPrevention) - 领地保护
-- [CoreProtect](https://coreprotect.net/) - 方块记录
-- [LuckPerms](https://luckperms.net/) - 权限管理
-- 以及所有其他优秀的插件开发者
-
-## 📝 更新日志
-
-### 2025-10-04
-- ✅ 初始化服务器项目
-- ✅ 安装并配置所有核心插件
-- ✅ 配置完整的玩家欢迎系统
-- ✅ 创建基础礼包（新手、工具）
-- ✅ 配置新玩家首次加入广播
-- ✅ 设置所有主动提示功能
-- ✅ 上传到 GitHub 仓库
+第三方软件、服务端核心和插件二进制遵循它们各自的许可证，不因为出现在你的部署目录中就自动变成 MIT。
