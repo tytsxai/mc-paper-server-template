@@ -103,7 +103,13 @@ plugins/.paper-remapped/
 plugins/**/userdata/
 plugins/**/data/
 plugins/**/Logs/
+plugins/**/tmp/
 plugins/**/libs/
+plugins/**/lastupdate
+plugins/**/*.bak
+plugins/**/*.old
+plugins/**/*.new
+plugins/**/backup_*
 plugins/GriefPreventionData/
 plugins/Essentials/usermap.bin
 plugins/Essentials/uuids.bin
