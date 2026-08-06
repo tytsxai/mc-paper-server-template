@@ -1,0 +1,66 @@
+# Minecraft Paper Server Template
+
+> Public engineering template for a **Minecraft Java 1.21.8 Paper** server: start/stop/backup/RCON scripts, Paper + plugin config skeletons, and custom `PlayerMenuPlugin` source. Intentionally excludes `paper-*.jar`, third-party plugin binaries, world saves, player data, logs, and real `server.properties` secrets.
+
+Chinese positioning: MC Paper 服务器工程模板。可复用运维脚本 + 公开配置 + 玩家菜单插件源码；运行时 jar / 世界 / 密钥需自备。
+
+## Key docs
+
+- [README.md](README.md): Scope, quick start, security, PlayerMenu, backup
+- `备份系统使用说明.md`: Backup system notes
+- `玩家菜单使用指南.md` / `MENU_README.txt`: Player menu
+- `permissions-summary.md`: Permissions summary
+- `Minecraft服务器玩家完整指南.md`: Player-facing guide
+
+## What is included
+
+- `start.sh` / `stop.sh` / `stop-graceful.sh` — default jar `paper-1.21.8-60.jar`, Java 21+, default heap `-Xms4G -Xmx10G`
+- `auto-backup-and-push.sh` / `restore-backup.sh` — restore requires server stopped; path-safety checks
+- `send-command.sh`, `scripts/rcon-send.py`, `rcon_command.py` — RCON helpers
+- `config/` — Paper global/world defaults
+- `plugins/` — public plugin configs/resources (jars not shipped)
+- `PlayerMenuPlugin/` — Maven plugin (`com.mcserver:PlayerMenu`), GUI menu + hotbar item + config persistence
+- `server.properties.example` — template for local `server.properties`
+
+## What is NOT included
+
+- ❌ Paper server binary
+- ❌ Third-party plugin `.jar` files
+- ❌ Worlds, player data, databases, logs
+- ❌ Real secrets / production `server.properties`
+- ❌ Tracked `backups/` tarballs
+
+## Quick start
+
+```bash
+cp server.properties.example server.properties
+# place paper-1.21.8-60.jar and plugin jars
+./start.sh
+./stop-graceful.sh
+```
+
+Build custom menu plugin:
+
+```bash
+mvn -q -f PlayerMenuPlugin/pom.xml package
+```
+
+## Requirements
+
+- Java 21+
+- Linux or macOS
+- Optional: Python 3, Maven, screen, gh
+
+## Plugin config skeletons present (configs only)
+
+AuthMe, Essentials (+ GeoIP), LuckPerms, Vault, ViaVersion/ViaBackwards, CoreProtect, WorldBorder, TAB, spark, ChestSort, ClearLag, FastAsyncWorldEdit, GSit, PlayerParticles, ProtocolLib, and related public resources.
+
+## Repository
+
+- GitHub: https://github.com/tytsxai/mc-paper-server-template
+- License: MIT for custom scripts/docs/PlayerMenuPlugin source
+- Third-party binaries remain under their own licenses
+
+## Useful search phrases
+
+- Minecraft Paper server template, Paper 1.21.8, MC 服模板, Minecraft ops scripts, backup restore RCON, PlayerMenu plugin, Essentials 汉化, LuckPerms template, Minecraft server scaffolding, Paper 生存服脚手架
